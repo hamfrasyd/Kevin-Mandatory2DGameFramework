@@ -1,0 +1,169 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Template.\+Implementations.\+Warrior Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior}{}\label{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior}\index{Mandatory2DGameFramework.Template.Implementations.Warrior@{Mandatory2DGameFramework.Template.Implementations.Warrior}}
+
+
+\doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior}{Warrior} creature class -\/ melee fighter with high HP and heavy armor. Overrides Apply\+Attack\+Modifiers to add bonus damage at low HP.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Template.\+Implementations.\+Warrior\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior_a2df197aa4dc4d0a05afeec1055c9c966}{Warrior}} (string name)
+\begin{DoxyCompactList}\small\item\em Initializes a new \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior}{Warrior} with 1000 HP and melee attack strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Mandatory2\+DGame\+Framework.\+Template.\+Base.\+Creature}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a9ca1bfa68235846627f2aa8b21d2ef53}{Attach}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer}{ICreature\+Observer}} observer)
+\begin{DoxyCompactList}\small\item\em Attaches an observer to receive notifications about this creature\textquotesingle{}s events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ab3556155b9c2a08346c942693702d5ca}{Detach}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer}{ICreature\+Observer}} observer)
+\begin{DoxyCompactList}\small\item\em Detaches an observer from this creature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_af508823977531ecadb03fefcc96cccd9}{Set\+Attack\+Strategy}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy}{IAttack\+Strategy}} strategy)
+\begin{DoxyCompactList}\small\item\em Sets the attack strategy for this creature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a684dc265d1c88902c6b8cd7527a3ba8e}{Perform\+Attack}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable}{IAttackable}} target, int range=0)
+\begin{DoxyCompactList}\small\item\em Performs an attack on the target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ad04245b2a4397f6ed5836d46eb464918}{Take\+Damage}} (int damage)
+\begin{DoxyCompactList}\small\item\em Takes damage from an attack, applying defense reduction. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a9eaed6affd81f12bbeb5aa101f423c4f}{Equip\+Weapon}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}{IWeapon}} weapon)
+\begin{DoxyCompactList}\small\item\em Equips a weapon for this creature. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a8087b3e4d629c6f4aa98b544557800e1}{To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Returns a comprehensive string representation of this creature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior_a30eb776617d7fae2672b7033ecb4d78f}{Apply\+Attack\+Modifiers}} (int base\+Damage)
+\begin{DoxyCompactList}\small\item\em Applies Warrior-\/specific damage modifiers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Mandatory2\+DGame\+Framework.\+Template.\+Base.\+Creature}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a9ec1f5b16d88ab6d5efa8cf34f278a70}{Creature}} (string name, int max\+HP)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature} class with required parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Mandatory2\+DGame\+Framework.\+Template.\+Base.\+Creature}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy}{IAttack\+Strategy}}? {\bfseries \+\_\+attack\+Strategy}
+\item 
+int {\bfseries \+\_\+base\+Auto\+Attack\+Damage}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Mandatory2\+DGame\+Framework.\+Template.\+Base.\+Creature}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a4b8d59f99e4489b969aa41ff75f06e21}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the unique identifier for this creature. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a41a44f9f88bd97541fe5045e8bc41891}{Base\+Auto\+Attack\+Damage}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the default base damage when unarmed. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a517c72b912a593b50d5d71118a277325}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name of the creature. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set}{Equipped\+Armor\+Set}} \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a7b1ff0bc9f73b05873c4e082e991de1d}{Equipped\+Armor}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the equipped armor set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}{IWeapon}}? \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ad20cb142204712b9a0cd084cd668514f}{Equipped\+Weapon}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the currently equipped weapon. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ab4e86d66f98170e5e682f46343034cc5}{XCoordinate}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the X coordinate position in the world. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a7920329dee16a774ba3a041011bce2e7}{YCoordinate}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the Y coordinate position in the world. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ab81dcf0df6132c534e7b2d9429851087}{Is\+Alive}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a value indicating whether this creature is alive. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a906cd7b54608555a57c06e4611c17aa7}{Max\+HP}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the maximum hit points for this creature. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a509441d1d96f8d0673c556cf99971c11}{Hit\+Point}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the current hit points. Automatically notifies observers when changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior}{Warrior} creature class -\/ melee fighter with high HP and heavy armor. Overrides Apply\+Attack\+Modifiers to add bonus damage at low HP. 
+
+{\bfseries{Class Characteristics\+:}} 
+\begin{DoxyItemize}
+\item {\bfseries{HP\+:}} 1000 (highest of all classes) 
+\item {\bfseries{\doxylink{namespace_mandatory2_d_game_framework_1_1_strategy}{Strategy}\+:}} Uses \doxylink{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_melee_attack_strategy}{Melee\+Attack\+Strategy} for close combat 
+\item {\bfseries{Armor\+:}} Plate material (highest defense) 
+\item {\bfseries{Weapon\+:}} Sword (high melee damage) 
+\item {\bfseries{Special\+:}} Bonus +10 damage when HP drops below 50 (critical strikes) 
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ warrior}}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior_a2df197aa4dc4d0a05afeec1055c9c966}{Warrior}}\ warrior\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior_a2df197aa4dc4d0a05afeec1055c9c966}{Warrior}}(\textcolor{stringliteral}{"{}Bob"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Equip\ heavy\ gear}}
+\DoxyCodeLine{IItemFactory\ factory\ =\ \textcolor{keyword}{new}\ WarriorItemFactory();}
+\DoxyCodeLine{warrior.EquipWeapon(factory.CreateWeapon(\textcolor{stringliteral}{"{}Battle\ Sword"{}}));}
+\DoxyCodeLine{warrior.EquippedArmor.Add(factory.CreateChestArmor(\textcolor{stringliteral}{"{}Plate\ Mail"{}}));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Normal\ attack}}
+\DoxyCodeLine{warrior.PerformAttack(enemy,\ range:\ 1);\ \textcolor{comment}{//\ Uses\ base\ damage}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Critical\ low\ HP\ attack}}
+\DoxyCodeLine{warrior.TakeDamage(600);\ \textcolor{comment}{//\ HP\ now\ 400/1000\ (below\ 50)}}
+\DoxyCodeLine{warrior.PerformAttack(enemy,\ range:\ 1);\ \textcolor{comment}{//\ +10\ bonus\ from\ low\ HP!}}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}, \doxylink{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_melee_attack_strategy}{Melee\+Attack\+Strategy}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-constructors}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior_a2df197aa4dc4d0a05afeec1055c9c966}\index{Mandatory2DGameFramework.Template.Implementations.Warrior@{Mandatory2DGameFramework.Template.Implementations.Warrior}!Warrior@{Warrior}}
+\index{Warrior@{Warrior}!Mandatory2DGameFramework.Template.Implementations.Warrior@{Mandatory2DGameFramework.Template.Implementations.Warrior}}
+\doxysubsubsection{\texorpdfstring{Warrior()}{Warrior()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior_a2df197aa4dc4d0a05afeec1055c9c966} 
+Mandatory2\+DGame\+Framework.\+Template.\+Implementations.\+Warrior.\+Warrior (\begin{DoxyParamCaption}\item[{string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a new \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior}{Warrior} with 1000 HP and melee attack strategy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the warrior.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior_a30eb776617d7fae2672b7033ecb4d78f}\index{Mandatory2DGameFramework.Template.Implementations.Warrior@{Mandatory2DGameFramework.Template.Implementations.Warrior}!ApplyAttackModifiers@{ApplyAttackModifiers}}
+\index{ApplyAttackModifiers@{ApplyAttackModifiers}!Mandatory2DGameFramework.Template.Implementations.Warrior@{Mandatory2DGameFramework.Template.Implementations.Warrior}}
+\doxysubsubsection{\texorpdfstring{ApplyAttackModifiers()}{ApplyAttackModifiers()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior_a30eb776617d7fae2672b7033ecb4d78f} 
+override int Mandatory2\+DGame\+Framework.\+Template.\+Implementations.\+Warrior.\+Apply\+Attack\+Modifiers (\begin{DoxyParamCaption}\item[{int}]{base\+Damage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Applies Warrior-\/specific damage modifiers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Damage} & The base damage from the attack strategy.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{namespace_mandatory2_d_game_framework_1_1_template_1_1_base}{Base} damage plus 10 if HP is below 50, otherwise unchanged.
+\end{DoxyReturn}
+
+
+Provides bonus damage when in critical condition (below 50 HP), representing desperate strength or berserker fury. 
+
+Reimplemented from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a4bda5e2de31f4cae8723f352ba15f89e}{Mandatory2\+DGame\+Framework.\+Template.\+Base.\+Creature}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Template/\+Implementations/Warrior.\+cs\end{DoxyCompactItemize}

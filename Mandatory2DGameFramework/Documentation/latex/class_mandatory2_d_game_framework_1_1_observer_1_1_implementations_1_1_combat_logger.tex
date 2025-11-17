@@ -1,0 +1,149 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Observer.\+Implementations.\+Combat\+Logger Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger}{}\label{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger}\index{Mandatory2DGameFramework.Observer.Implementations.CombatLogger@{Mandatory2DGameFramework.Observer.Implementations.CombatLogger}}
+
+
+\doxylink{namespace_mandatory2_d_game_framework_1_1_observer}{Observer} that logs combat events to a file. Writes detailed combat information using the logger system. Singleton pattern -\/ automatically starts combat logging on first access.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Observer.\+Implementations.\+Combat\+Logger\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger_add20915e62a25ba6c5a0b8b3132cc6aa}{On\+Damage\+Done}} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}} attacker, string action, \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable}{IAttackable}} target, int damage)
+\begin{DoxyCompactList}\small\item\em Logs when a creature performs an attack (damage done). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger_a399d5cca233fb531312beed992c6052d}{On\+Creature\+Hit}} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}} creature, string action, int damage\+Taken, int damage\+Mitigated)
+\begin{DoxyCompactList}\small\item\em Logs when a creature is hit, including damage amount and mitigation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger_a99b8a3884bf21e315f2672db65bece7c}{On\+Creature\+Died}} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}} creature)
+\begin{DoxyCompactList}\small\item\em Logs when a creature dies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger_a3efea207f8b0486ab3459fb6ad418de0}\label{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger_a3efea207f8b0486ab3459fb6ad418de0} 
+static Combat\+Logger {\bfseries Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the singleton instance of \doxylink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger}{Combat\+Logger}. Automatically starts combat logging on first access. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{namespace_mandatory2_d_game_framework_1_1_observer}{Observer} that logs combat events to a file. Writes detailed combat information using the logger system. Singleton pattern -\/ automatically starts combat logging on first access. 
+
+\doxylink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger}{Combat\+Logger} observes creature events and writes detailed combat information to Combatlog.\+txt using the \doxylink{class_mandatory2_d_game_framework_1_1_loggers_1_1_my_logger}{My\+Logger} singleton. This enables\+: 
+\begin{DoxyItemize}
+\item Combat history tracking 
+\item Debugging and analysis 
+\item Event auditing 
+\end{DoxyItemize}
+
+Logs include creature name, damage amounts, and HP status. 
+
+The logger automatically initializes combat logging when first accessed. Uses singleton pattern to ensure only one instance exists. Writes only to Combatlog.\+txt, separate from application logs. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ and\ attach\ logger\ (combat\ logging\ starts\ automatically)}}
+\DoxyCodeLine{CombatLogger\ logger\ =\ CombatLogger.Instance;}
+\DoxyCodeLine{Creature\ warrior\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ab0cf20a6d45a1f00a50d33a20511a9d1a7ee7fa010d64b90a36803a8445f2e943}{Warrior}}(\textcolor{stringliteral}{"{}Bob"{}},\ 1000);}
+\DoxyCodeLine{Creature\ mage\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ab0cf20a6d45a1f00a50d33a20511a9d1a8eb9bca606e30006ccd71ab236760ce8}{Mage}}(\textcolor{stringliteral}{"{}Alice"{}},\ 800);}
+\DoxyCodeLine{warrior.Attach(logger);}
+\DoxyCodeLine{mage.Attach(logger);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Attack\ triggers\ both\ damage\ done\ and\ damage\ taken\ logs}}
+\DoxyCodeLine{warrior.PerformAttack(mage,\ range:\ 1);}
+\DoxyCodeLine{\textcolor{comment}{//\ Log\ output:}}
+\DoxyCodeLine{\textcolor{comment}{//\ [Damage\ Done]\ Bob-\/CreatureId:\ 1,\ Action:\ Attack,\ Target:\ Alice,\ Damage:\ 30}}
+\DoxyCodeLine{\textcolor{comment}{//\ [Damage\ Taken]\ Alice-\/CreatureId:\ 2,\ Action:\ Attack,\ Damage:\ 25\ (Damage\ mitigated:\ 5)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{mage.TakeDamage(1000);}
+\DoxyCodeLine{\textcolor{comment}{//\ Log\ output:\ [Death]\ Alice-\/CreatureId:\ 2\ has\ died!}}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer}{ICreature\+Observer}, \doxylink{class_mandatory2_d_game_framework_1_1_loggers_1_1_my_logger}{My\+Logger}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-func-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger_a99b8a3884bf21e315f2672db65bece7c}\index{Mandatory2DGameFramework.Observer.Implementations.CombatLogger@{Mandatory2DGameFramework.Observer.Implementations.CombatLogger}!OnCreatureDied@{OnCreatureDied}}
+\index{OnCreatureDied@{OnCreatureDied}!Mandatory2DGameFramework.Observer.Implementations.CombatLogger@{Mandatory2DGameFramework.Observer.Implementations.CombatLogger}}
+\doxysubsubsection{\texorpdfstring{OnCreatureDied()}{OnCreatureDied()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger_a99b8a3884bf21e315f2672db65bece7c} 
+void Mandatory2\+DGame\+Framework.\+Observer.\+Implementations.\+Combat\+Logger.\+On\+Creature\+Died (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}}}]{creature}{}\end{DoxyParamCaption})}
+
+
+
+Logs when a creature dies. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em creature} & The creature that died.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer_a80411af792cc886c34310759db6ac521}{Mandatory2\+DGame\+Framework.\+Observer.\+Interfaces.\+ICreature\+Observer}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger_a399d5cca233fb531312beed992c6052d}\index{Mandatory2DGameFramework.Observer.Implementations.CombatLogger@{Mandatory2DGameFramework.Observer.Implementations.CombatLogger}!OnCreatureHit@{OnCreatureHit}}
+\index{OnCreatureHit@{OnCreatureHit}!Mandatory2DGameFramework.Observer.Implementations.CombatLogger@{Mandatory2DGameFramework.Observer.Implementations.CombatLogger}}
+\doxysubsubsection{\texorpdfstring{OnCreatureHit()}{OnCreatureHit()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger_a399d5cca233fb531312beed992c6052d} 
+void Mandatory2\+DGame\+Framework.\+Observer.\+Implementations.\+Combat\+Logger.\+On\+Creature\+Hit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}}}]{creature}{, }\item[{string}]{action}{, }\item[{int}]{damage\+Taken}{, }\item[{int}]{damage\+Mitigated}{}\end{DoxyParamCaption})}
+
+
+
+Logs when a creature is hit, including damage amount and mitigation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em creature} & The creature that was hit.\\
+\hline
+{\em action} & The action that caused damage.\\
+\hline
+{\em damage\+Taken} & The amount of damage taken.\\
+\hline
+{\em damage\+Mitigated} & The amount of damage mitigated.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer_a24f418dead97eee7a49e709581066063}{Mandatory2\+DGame\+Framework.\+Observer.\+Interfaces.\+ICreature\+Observer}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger_add20915e62a25ba6c5a0b8b3132cc6aa}\index{Mandatory2DGameFramework.Observer.Implementations.CombatLogger@{Mandatory2DGameFramework.Observer.Implementations.CombatLogger}!OnDamageDone@{OnDamageDone}}
+\index{OnDamageDone@{OnDamageDone}!Mandatory2DGameFramework.Observer.Implementations.CombatLogger@{Mandatory2DGameFramework.Observer.Implementations.CombatLogger}}
+\doxysubsubsection{\texorpdfstring{OnDamageDone()}{OnDamageDone()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger_add20915e62a25ba6c5a0b8b3132cc6aa} 
+void Mandatory2\+DGame\+Framework.\+Observer.\+Implementations.\+Combat\+Logger.\+On\+Damage\+Done (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}}}]{attacker}{, }\item[{string}]{action}{, }\item[{\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable}{IAttackable}}}]{target}{, }\item[{int}]{damage}{}\end{DoxyParamCaption})}
+
+
+
+Logs when a creature performs an attack (damage done). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attacker} & The creature performing the attack.\\
+\hline
+{\em action} & The action performed.\\
+\hline
+{\em target} & The target being attacked.\\
+\hline
+{\em damage} & The amount of damage dealt.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer_aecb96860ad6b3c7c7259a8f5310320ed}{Mandatory2\+DGame\+Framework.\+Observer.\+Interfaces.\+ICreature\+Observer}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Observer/\+Implementations/Combat\+Logger.\+cs\end{DoxyCompactItemize}

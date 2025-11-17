@@ -1,0 +1,85 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Strategy.\+Implementations.\+Ranged\+Attack\+Strategy Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_ranged_attack_strategy}{}\label{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_ranged_attack_strategy}\index{Mandatory2DGameFramework.Strategy.Implementations.RangedAttackStrategy@{Mandatory2DGameFramework.Strategy.Implementations.RangedAttackStrategy}}
+
+
+Ranged attack strategy that provides bonus damage at long distances. Designed for long-\/range combat.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Strategy.\+Implementations.\+Ranged\+Attack\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_ranged_attack_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_ranged_attack_strategy_ae0356b4e37aa8f86b4fb4adb36f60c27}{Attack}} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}} attacker, int range)
+\begin{DoxyCompactList}\small\item\em Calculates ranged attack damage with range-\/based bonus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ranged attack strategy that provides bonus damage at long distances. Designed for long-\/range combat. 
+
+This strategy is designed for ranged attackers and rewards positioning\+: 
+\begin{DoxyItemize}
+\item {\bfseries{Short/\+Medium range (0-\/19)\+:}} Uses \doxylink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_aa29fdf012ddc8ddf6db0d0f12dfa114d}{IWeapon.\+Get\+Damage} or default base damage if unarmed 
+\item {\bfseries{Long range (20+)\+:}} Applies 50\% damage bonus for optimal positioning 
+\end{DoxyItemize}
+
+Used by default by \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage}{Mage} and \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_hunter}{Hunter} classes. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Mage\ with\ RangedAttackStrategy}}
+\DoxyCodeLine{Creature\ mage\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ab0cf20a6d45a1f00a50d33a20511a9d1a8eb9bca606e30006ccd71ab236760ce8}{Mage}}(\textcolor{stringliteral}{"{}Alice"{}},\ 800);}
+\DoxyCodeLine{mage.EquipWeapon(\textcolor{keyword}{new}\ AttackItem(\textcolor{stringliteral}{"{}Staff"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a44d3ad5220bea59ba6888819bd193b8e}{WeaponType}}.Staff,\ 25,\ 2));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Short\ range\ attack:\ 25\ damage}}
+\DoxyCodeLine{mage.PerformAttack(enemy,\ range:\ 10);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Long\ range\ attack:\ 37\ damage\ (25\ *\ 1.5,\ rounded\ down)}}
+\DoxyCodeLine{mage.PerformAttack(enemy,\ range:\ 25);}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy}{IAttack\+Strategy}, \doxylink{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_melee_attack_strategy}{Melee\+Attack\+Strategy}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-func-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_ranged_attack_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_ranged_attack_strategy_ae0356b4e37aa8f86b4fb4adb36f60c27}\index{Mandatory2DGameFramework.Strategy.Implementations.RangedAttackStrategy@{Mandatory2DGameFramework.Strategy.Implementations.RangedAttackStrategy}!Attack@{Attack}}
+\index{Attack@{Attack}!Mandatory2DGameFramework.Strategy.Implementations.RangedAttackStrategy@{Mandatory2DGameFramework.Strategy.Implementations.RangedAttackStrategy}}
+\doxysubsubsection{\texorpdfstring{Attack()}{Attack()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_ranged_attack_strategy_ae0356b4e37aa8f86b4fb4adb36f60c27} 
+int Mandatory2\+DGame\+Framework.\+Strategy.\+Implementations.\+Ranged\+Attack\+Strategy.\+Attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}}}]{attacker}{, }\item[{int}]{range}{}\end{DoxyParamCaption})}
+
+
+
+Calculates ranged attack damage with range-\/based bonus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attacker} & The creature performing the attack.\\
+\hline
+{\em range} & The distance to target. Bonus applied if range ≥ 20.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{namespace_mandatory2_d_game_framework_1_1_template_1_1_base}{Base} damage from \doxylink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_aa29fdf012ddc8ddf6db0d0f12dfa114d}{IWeapon.\+Get\+Damage} (or default base damage if unarmed), multiplied by 1.\+5 if range is 20 or more. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy_a69c173fedf782d51b5313d1fc0178582}{Mandatory2\+DGame\+Framework.\+Strategy.\+Interfaces.\+IAttack\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Strategy/\+Implementations/Ranged\+Attack\+Strategy.\+cs\end{DoxyCompactItemize}

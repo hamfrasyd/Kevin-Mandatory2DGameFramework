@@ -1,0 +1,5 @@
+var namespace_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators =
+[
+    [ "BoostDefenceDecorator", "class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator.html", "class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator" ],
+    [ "WeakenDefenceDecorator", "class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator.html", "class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator" ]
+];

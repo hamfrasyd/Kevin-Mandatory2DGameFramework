@@ -1,0 +1,4 @@
+var namespace_mandatory2_d_game_framework_1_1_observer_1_1_interfaces =
+[
+    [ "ICreatureObserver", "interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer.html", "interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer" ]
+];

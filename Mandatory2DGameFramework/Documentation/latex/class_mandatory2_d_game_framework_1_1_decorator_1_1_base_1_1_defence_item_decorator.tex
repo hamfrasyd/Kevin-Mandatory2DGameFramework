@@ -1,0 +1,113 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Decorator.\+Base.\+Defence\+Item\+Decorator Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator}{}\label{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator}\index{Mandatory2DGameFramework.Decorator.Base.DefenceItemDecorator@{Mandatory2DGameFramework.Decorator.Base.DefenceItemDecorator}}
+
+
+\doxylink{namespace_mandatory2_d_game_framework_1_1_decorator_1_1_base}{Base} decorator class for defense items. Wraps an \doxylink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item} and delegates to it while allowing subclasses to modify behavior.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Decorator.\+Base.\+Defence\+Item\+Decorator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.596958cm]{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a5d301123c9a8a8a63ec3bb2745733306}{Defence\+Item\+Decorator}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} item)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator}{Defence\+Item\+Decorator} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a1b2721d0641ee7a8e5673272b3cf435f}\label{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a1b2721d0641ee7a8e5673272b3cf435f} 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} {\bfseries \+\_\+wrapped\+Item}
+\begin{DoxyCompactList}\small\item\em The wrapped defense item that this decorator modifies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a9b2ec3ec71bde5878baacad1da9d7349}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the name of the defense item. Can be overridden to modify the name. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a7c86d3aedd1876695bb285dfa912b70a}{Defense}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the defense value. Can be overridden to modify the defense value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{namespace_mandatory2_d_game_framework_1_1_decorator_1_1_base}{Base} decorator class for defense items. Wraps an \doxylink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item} and delegates to it while allowing subclasses to modify behavior. 
+
+This abstract class serves as the foundation for concrete decorators that modify defense item properties (boost or weaken defense values). 
+
+Concrete decorators override the virtual properties to modify values while maintaining the wrapped item\textquotesingle{}s identity. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Concrete\ decorator\ usage:}}
+\DoxyCodeLine{IDefenceItem\ armor\ =\ \textcolor{keyword}{new}\ DefenceItem(\textcolor{stringliteral}{"{}Helmet"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{ArmorSlot}}.Head,\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{ArmorType}}.Plate,\ 10);}
+\DoxyCodeLine{IDefenceItem\ boosted\ =\ \textcolor{keyword}{new}\ BoostDefenceDecorator(armor);}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ defense\ =\ boosted.Defense;\ \textcolor{comment}{//\ Returns\ 15}}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}, \doxylink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator}{Boost\+Defence\+Decorator}, \doxylink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator}{Weaken\+Defence\+Decorator}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-constructors}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a5d301123c9a8a8a63ec3bb2745733306}\index{Mandatory2DGameFramework.Decorator.Base.DefenceItemDecorator@{Mandatory2DGameFramework.Decorator.Base.DefenceItemDecorator}!DefenceItemDecorator@{DefenceItemDecorator}}
+\index{DefenceItemDecorator@{DefenceItemDecorator}!Mandatory2DGameFramework.Decorator.Base.DefenceItemDecorator@{Mandatory2DGameFramework.Decorator.Base.DefenceItemDecorator}}
+\doxysubsubsection{\texorpdfstring{DefenceItemDecorator()}{DefenceItemDecorator()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a5d301123c9a8a8a63ec3bb2745733306} 
+Mandatory2\+DGame\+Framework.\+Decorator.\+Base.\+Defence\+Item\+Decorator.\+Defence\+Item\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}}}]{item}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator}{Defence\+Item\+Decorator} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The defense item to wrap/decorate.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-property-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a7c86d3aedd1876695bb285dfa912b70a}\index{Mandatory2DGameFramework.Decorator.Base.DefenceItemDecorator@{Mandatory2DGameFramework.Decorator.Base.DefenceItemDecorator}!Defense@{Defense}}
+\index{Defense@{Defense}!Mandatory2DGameFramework.Decorator.Base.DefenceItemDecorator@{Mandatory2DGameFramework.Decorator.Base.DefenceItemDecorator}}
+\doxysubsubsection{\texorpdfstring{Defense}{Defense}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a7c86d3aedd1876695bb285dfa912b70a} 
+virtual int Mandatory2\+DGame\+Framework.\+Decorator.\+Base.\+Defence\+Item\+Decorator.\+Defense\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the defense value. Can be overridden to modify the defense value. 
+
+The defense value, potentially modified by decorators.
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item_a9a52f09c4c3a43d361d35c43123b627a}{Mandatory2\+DGame\+Framework.\+Decorator.\+Interfaces.\+IDefence\+Item}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a9b2ec3ec71bde5878baacad1da9d7349}\index{Mandatory2DGameFramework.Decorator.Base.DefenceItemDecorator@{Mandatory2DGameFramework.Decorator.Base.DefenceItemDecorator}!Name@{Name}}
+\index{Name@{Name}!Mandatory2DGameFramework.Decorator.Base.DefenceItemDecorator@{Mandatory2DGameFramework.Decorator.Base.DefenceItemDecorator}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a9b2ec3ec71bde5878baacad1da9d7349} 
+virtual string Mandatory2\+DGame\+Framework.\+Decorator.\+Base.\+Defence\+Item\+Decorator.\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the name of the defense item. Can be overridden to modify the name. 
+
+The item\textquotesingle{}s name, potentially modified by decorators.
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item_aa5cc1b82509d924baffbe7717238bcdc}{Mandatory2\+DGame\+Framework.\+Decorator.\+Interfaces.\+IDefence\+Item}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Decorator/\+Base/Defence\+Item\+Decorator.\+cs\end{DoxyCompactItemize}

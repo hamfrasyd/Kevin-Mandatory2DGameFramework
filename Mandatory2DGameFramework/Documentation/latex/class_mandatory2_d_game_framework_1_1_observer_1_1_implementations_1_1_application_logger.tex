@@ -1,0 +1,203 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Observer.\+Implementations.\+Application\+Logger Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger}{}\label{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger}\index{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger@{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger}}
+
+
+Logger that tracks system-\/wide application events. Logs object creation, modification, retrieval, and state changes. Singleton pattern -\/ automatically starts application logging on first access.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_a862f81890e2c01484e518b449053a743}{Log\+Object\+Created}} (string object\+Type, int object\+Id, string object\+Name, string? details=null)
+\begin{DoxyCompactList}\small\item\em Logs when an object is created. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_ac496cf1e5123eea6a2c92412c19bda51}{Log\+Property\+Changed}} (string object\+Type, int object\+Id, string object\+Name, string property\+Name, object old\+Value, object new\+Value)
+\begin{DoxyCompactList}\small\item\em Logs when a property value is changed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_a2c637cb660af071787d9a64d6be24ce3}{Log\+Object\+Retrieved}} (string object\+Type, int object\+Id, string object\+Name, string operation="{}Retrieved"{})
+\begin{DoxyCompactList}\small\item\em Logs when an object is retrieved or accessed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_a045f56643aae74c7898f61b852084c0a}{Log\+Object\+Modified}} (string object\+Type, int object\+Id, string object\+Name, string modification)
+\begin{DoxyCompactList}\small\item\em Logs when an object is modified (equipment changes, etc.). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_a07984ed33770cdc9e071c3a78dc5632c}{Log\+Object\+Added}} (string object\+Type, int object\+Id, string object\+Name, string collection\+Name)
+\begin{DoxyCompactList}\small\item\em Logs when an object is added to a collection or world. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_aaba95327c101a7b23b45231cdd063399}{Log\+Object\+Removed}} (string object\+Type, int object\+Id, string object\+Name, string collection\+Name)
+\begin{DoxyCompactList}\small\item\em Logs when an object is removed from a collection or world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_a300f3d6d48a42339a5ae9c296efe3566}\label{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_a300f3d6d48a42339a5ae9c296efe3566} 
+static Application\+Logger {\bfseries Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the singleton instance of \doxylink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger}{Application\+Logger}. Automatically starts application logging on first access. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Logger that tracks system-\/wide application events. Logs object creation, modification, retrieval, and state changes. Singleton pattern -\/ automatically starts application logging on first access. 
+
+\doxylink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger}{Application\+Logger} writes detailed information about application lifecycle events to Application\+Log.\+txt. This includes\+: 
+\begin{DoxyItemize}
+\item Object creation (Creatures, Items, World objects) 
+\item Property value changes 
+\item Object retrieval operations 
+\item Object modifications (equipment, armor, etc.) 
+\end{DoxyItemize}
+
+The logger automatically initializes application logging when first accessed. Uses singleton pattern to ensure only one instance exists. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Application\ logging\ starts\ automatically\ on\ first\ access}}
+\DoxyCodeLine{ApplicationLogger.Instance.LogObjectCreated(\textcolor{stringliteral}{"{}Warrior"{}},\ 1,\ \textcolor{stringliteral}{"{}Bob"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ objects\ -\/\ automatically\ logged}}
+\DoxyCodeLine{Creature\ warrior\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ab0cf20a6d45a1f00a50d33a20511a9d1a7ee7fa010d64b90a36803a8445f2e943}{Warrior}}(\textcolor{stringliteral}{"{}Bob"{}});}
+\DoxyCodeLine{AttackItem\ sword\ =\ \textcolor{keyword}{new}\ AttackItem(\textcolor{stringliteral}{"{}Sword"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a44d3ad5220bea59ba6888819bd193b8e}{WeaponType}}.Sword,\ 30,\ 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Modify\ properties\ -\/\ automatically\ logged}}
+\DoxyCodeLine{sword.Hit\ =\ 35;\ \textcolor{comment}{//\ Logs:\ "{}[Property\ Changed]\ AttackItem-\/Sword\ (ID:\ 1):\ Hit\ changed\ from\ 30\ to\ 35"{}}}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_mandatory2_d_game_framework_1_1_loggers_1_1_my_logger}{My\+Logger}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-func-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_a07984ed33770cdc9e071c3a78dc5632c}\index{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger@{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger}!LogObjectAdded@{LogObjectAdded}}
+\index{LogObjectAdded@{LogObjectAdded}!Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger@{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger}}
+\doxysubsubsection{\texorpdfstring{LogObjectAdded()}{LogObjectAdded()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_a07984ed33770cdc9e071c3a78dc5632c} 
+void Mandatory2\+DGame\+Framework.\+Observer.\+Implementations.\+Application\+Logger.\+Log\+Object\+Added (\begin{DoxyParamCaption}\item[{string}]{object\+Type}{, }\item[{int}]{object\+Id}{, }\item[{string}]{object\+Name}{, }\item[{string}]{collection\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Logs when an object is added to a collection or world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Type} & The type of object being added.\\
+\hline
+{\em object\+Id} & The unique ID of the object.\\
+\hline
+{\em object\+Name} & The name of the object.\\
+\hline
+{\em collection\+Name} & The name of the collection or world it\textquotesingle{}s being added to.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_a862f81890e2c01484e518b449053a743}\index{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger@{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger}!LogObjectCreated@{LogObjectCreated}}
+\index{LogObjectCreated@{LogObjectCreated}!Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger@{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger}}
+\doxysubsubsection{\texorpdfstring{LogObjectCreated()}{LogObjectCreated()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_a862f81890e2c01484e518b449053a743} 
+void Mandatory2\+DGame\+Framework.\+Observer.\+Implementations.\+Application\+Logger.\+Log\+Object\+Created (\begin{DoxyParamCaption}\item[{string}]{object\+Type}{, }\item[{int}]{object\+Id}{, }\item[{string}]{object\+Name}{, }\item[{string?}]{details}{ = {\ttfamily null}}\end{DoxyParamCaption})}
+
+
+
+Logs when an object is created. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Type} & The type of object being created.\\
+\hline
+{\em object\+Id} & The unique ID of the object.\\
+\hline
+{\em object\+Name} & The name of the object.\\
+\hline
+{\em details} & Optional additional details about the object.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_a045f56643aae74c7898f61b852084c0a}\index{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger@{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger}!LogObjectModified@{LogObjectModified}}
+\index{LogObjectModified@{LogObjectModified}!Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger@{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger}}
+\doxysubsubsection{\texorpdfstring{LogObjectModified()}{LogObjectModified()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_a045f56643aae74c7898f61b852084c0a} 
+void Mandatory2\+DGame\+Framework.\+Observer.\+Implementations.\+Application\+Logger.\+Log\+Object\+Modified (\begin{DoxyParamCaption}\item[{string}]{object\+Type}{, }\item[{int}]{object\+Id}{, }\item[{string}]{object\+Name}{, }\item[{string}]{modification}{}\end{DoxyParamCaption})}
+
+
+
+Logs when an object is modified (equipment changes, etc.). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Type} & The type of object being modified.\\
+\hline
+{\em object\+Id} & The unique ID of the object.\\
+\hline
+{\em object\+Name} & The name of the object.\\
+\hline
+{\em modification} & Description of the modification.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_aaba95327c101a7b23b45231cdd063399}\index{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger@{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger}!LogObjectRemoved@{LogObjectRemoved}}
+\index{LogObjectRemoved@{LogObjectRemoved}!Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger@{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger}}
+\doxysubsubsection{\texorpdfstring{LogObjectRemoved()}{LogObjectRemoved()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_aaba95327c101a7b23b45231cdd063399} 
+void Mandatory2\+DGame\+Framework.\+Observer.\+Implementations.\+Application\+Logger.\+Log\+Object\+Removed (\begin{DoxyParamCaption}\item[{string}]{object\+Type}{, }\item[{int}]{object\+Id}{, }\item[{string}]{object\+Name}{, }\item[{string}]{collection\+Name}{}\end{DoxyParamCaption})}
+
+
+
+Logs when an object is removed from a collection or world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Type} & The type of object being removed.\\
+\hline
+{\em object\+Id} & The unique ID of the object.\\
+\hline
+{\em object\+Name} & The name of the object.\\
+\hline
+{\em collection\+Name} & The name of the collection or world it\textquotesingle{}s being removed from.\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_a2c637cb660af071787d9a64d6be24ce3}\index{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger@{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger}!LogObjectRetrieved@{LogObjectRetrieved}}
+\index{LogObjectRetrieved@{LogObjectRetrieved}!Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger@{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger}}
+\doxysubsubsection{\texorpdfstring{LogObjectRetrieved()}{LogObjectRetrieved()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_a2c637cb660af071787d9a64d6be24ce3} 
+void Mandatory2\+DGame\+Framework.\+Observer.\+Implementations.\+Application\+Logger.\+Log\+Object\+Retrieved (\begin{DoxyParamCaption}\item[{string}]{object\+Type}{, }\item[{int}]{object\+Id}{, }\item[{string}]{object\+Name}{, }\item[{string}]{operation}{ = {\ttfamily "{}Retrieved"{}}}\end{DoxyParamCaption})}
+
+
+
+Logs when an object is retrieved or accessed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Type} & The type of object being retrieved.\\
+\hline
+{\em object\+Id} & The unique ID of the object.\\
+\hline
+{\em object\+Name} & The name of the object.\\
+\hline
+{\em operation} & The operation being performed (e.\+g., "{}\+Retrieved"{}, "{}\+Accessed"{}).\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_ac496cf1e5123eea6a2c92412c19bda51}\index{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger@{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger}!LogPropertyChanged@{LogPropertyChanged}}
+\index{LogPropertyChanged@{LogPropertyChanged}!Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger@{Mandatory2DGameFramework.Observer.Implementations.ApplicationLogger}}
+\doxysubsubsection{\texorpdfstring{LogPropertyChanged()}{LogPropertyChanged()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger_ac496cf1e5123eea6a2c92412c19bda51} 
+void Mandatory2\+DGame\+Framework.\+Observer.\+Implementations.\+Application\+Logger.\+Log\+Property\+Changed (\begin{DoxyParamCaption}\item[{string}]{object\+Type}{, }\item[{int}]{object\+Id}{, }\item[{string}]{object\+Name}{, }\item[{string}]{property\+Name}{, }\item[{object}]{old\+Value}{, }\item[{object}]{new\+Value}{}\end{DoxyParamCaption})}
+
+
+
+Logs when a property value is changed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em object\+Type} & The type of object.\\
+\hline
+{\em object\+Id} & The unique ID of the object.\\
+\hline
+{\em object\+Name} & The name of the object.\\
+\hline
+{\em property\+Name} & The name of the property being changed.\\
+\hline
+{\em old\+Value} & The previous value.\\
+\hline
+{\em new\+Value} & The new value.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Observer/\+Implementations/Application\+Logger.\+cs\end{DoxyCompactItemize}

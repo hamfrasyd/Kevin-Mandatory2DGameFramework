@@ -1,0 +1,114 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Composite.\+Interfaces.\+IGame\+Item Interface Reference}
+\hypertarget{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item}{}\label{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item}\index{Mandatory2DGameFramework.Composite.Interfaces.IGameItem@{Mandatory2DGameFramework.Composite.Interfaces.IGameItem}}
+
+
+Interface for game items that can be grouped into collections. Both individual items and collections implement this interface.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Composite.\+Interfaces.\+IGame\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.230769cm]{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_a6a74efe785c89910e5fb1fbbf099c11a}{Get\+Total\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Gets the total value of this item. For armor items, this represents defense value. \doxylink{namespace_mandatory2_d_game_framework_1_1_composite}{Composite} implementations recursively sum values from all children. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_ab11b62c9cec9d4f442db1955992c9805}{Get\+Item\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Gets the count of items. Leafs return 1, composites return sum of all child items. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_a757136188e8fc0cdbae82d12bcfdd211}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the name of this item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for game items that can be grouped into collections. Both individual items and collections implement this interface. 
+
+Individual items return their own values, while collections aggregate values from all contained items. This allows treating individual items and collections uniformly. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Leaf\ usage:}}
+\DoxyCodeLine{IGameItem\ helmet\ =\ \textcolor{keyword}{new}\ DefenceItem(\textcolor{stringliteral}{"{}Iron\ Helmet"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{ArmorSlot}}.Head,\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{ArmorType}}.Plate,\ 10);}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ value\ =\ helmet.GetTotalValue();\ \textcolor{comment}{//\ Returns\ 10}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Composite\ usage:}}
+\DoxyCodeLine{IGameItem\ armorSet\ =\ \textcolor{keyword}{new}\ EquippedArmorSet(\textcolor{stringliteral}{"{}Full\ Set"{}});}
+\DoxyCodeLine{armorSet.Add(helmet);}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ totalValue\ =\ armorSet.GetTotalValue();\ \textcolor{comment}{//\ Returns\ sum\ of\ all\ items}}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item}{Defence\+Item}, \doxylink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set}{Equipped\+Armor\+Set}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-func-members}
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_ab11b62c9cec9d4f442db1955992c9805}\index{Mandatory2DGameFramework.Composite.Interfaces.IGameItem@{Mandatory2DGameFramework.Composite.Interfaces.IGameItem}!GetItemCount@{GetItemCount}}
+\index{GetItemCount@{GetItemCount}!Mandatory2DGameFramework.Composite.Interfaces.IGameItem@{Mandatory2DGameFramework.Composite.Interfaces.IGameItem}}
+\doxysubsubsection{\texorpdfstring{GetItemCount()}{GetItemCount()}}
+{\footnotesize\ttfamily \label{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_ab11b62c9cec9d4f442db1955992c9805} 
+int Mandatory2\+DGame\+Framework.\+Composite.\+Interfaces.\+IGame\+Item.\+Get\+Item\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the count of items. Leafs return 1, composites return sum of all child items. 
+
+\begin{DoxyReturn}{Returns}
+The item count.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_a2459808bccd2e9c480130bea8abb7d5a}{Mandatory2\+DGame\+Framework.\+Composite.\+Implementations.\+Equipped\+Armor\+Set}}, and \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_ac243615755505d9bc8cbc4375e4d6015}{Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Defence\+Item}}.
+
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_a6a74efe785c89910e5fb1fbbf099c11a}\index{Mandatory2DGameFramework.Composite.Interfaces.IGameItem@{Mandatory2DGameFramework.Composite.Interfaces.IGameItem}!GetTotalValue@{GetTotalValue}}
+\index{GetTotalValue@{GetTotalValue}!Mandatory2DGameFramework.Composite.Interfaces.IGameItem@{Mandatory2DGameFramework.Composite.Interfaces.IGameItem}}
+\doxysubsubsection{\texorpdfstring{GetTotalValue()}{GetTotalValue()}}
+{\footnotesize\ttfamily \label{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_a6a74efe785c89910e5fb1fbbf099c11a} 
+int Mandatory2\+DGame\+Framework.\+Composite.\+Interfaces.\+IGame\+Item.\+Get\+Total\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the total value of this item. For armor items, this represents defense value. \doxylink{namespace_mandatory2_d_game_framework_1_1_composite}{Composite} implementations recursively sum values from all children. 
+
+\begin{DoxyReturn}{Returns}
+The total value. For leafs returns own value, for composites returns sum of children.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_a0c5d27bb2975898084709dcc8cb41b33}{Mandatory2\+DGame\+Framework.\+Composite.\+Implementations.\+Equipped\+Armor\+Set}}, and \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_a685dea33ed9fa8901c388eb7dd4dd291}{Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Defence\+Item}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_a757136188e8fc0cdbae82d12bcfdd211}\index{Mandatory2DGameFramework.Composite.Interfaces.IGameItem@{Mandatory2DGameFramework.Composite.Interfaces.IGameItem}!Name@{Name}}
+\index{Name@{Name}!Mandatory2DGameFramework.Composite.Interfaces.IGameItem@{Mandatory2DGameFramework.Composite.Interfaces.IGameItem}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily \label{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_a757136188e8fc0cdbae82d12bcfdd211} 
+string Mandatory2\+DGame\+Framework.\+Composite.\+Interfaces.\+IGame\+Item.\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the name of this item. 
+
+The name of the item.
+
+Implemented in \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_a546921e35b339a4aca68e260d752e4f7}{Mandatory2\+DGame\+Framework.\+Composite.\+Implementations.\+Equipped\+Armor\+Set}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Composite/\+Interfaces/IGame\+Item.\+cs\end{DoxyCompactItemize}

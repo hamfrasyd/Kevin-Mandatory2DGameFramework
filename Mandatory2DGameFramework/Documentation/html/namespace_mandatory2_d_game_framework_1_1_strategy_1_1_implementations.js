@@ -1,0 +1,5 @@
+var namespace_mandatory2_d_game_framework_1_1_strategy_1_1_implementations =
+[
+    [ "MeleeAttackStrategy", "class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_melee_attack_strategy.html", "class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_melee_attack_strategy" ],
+    [ "RangedAttackStrategy", "class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_ranged_attack_strategy.html", "class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_ranged_attack_strategy" ]
+];

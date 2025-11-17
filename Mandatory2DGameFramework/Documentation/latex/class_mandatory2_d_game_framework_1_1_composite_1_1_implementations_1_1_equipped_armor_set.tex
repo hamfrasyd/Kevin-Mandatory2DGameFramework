@@ -1,0 +1,237 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Composite.\+Implementations.\+Equipped\+Armor\+Set Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set}{}\label{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set}\index{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet@{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet}}
+
+
+Manages equipped armor pieces as a collection. Can contain both individual armor pieces and other armor sets.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Composite.\+Implementations.\+Equipped\+Armor\+Set\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ad63bbfb643a5833206931b2871a7c4bb}{Equipped\+Armor\+Set}} (string name="{}Equipped Armor"{})
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set}{Equipped\+Armor\+Set} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ab4c71fe8154dc8d165cdde5a02b8531e}{Add}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item}{IGame\+Item}} item)
+\begin{DoxyCompactList}\small\item\em Adds an item to this armor set. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_aa6a45cdbdf0e26069c7586ce8bafd0cd}{Remove}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item}{IGame\+Item}} item)
+\begin{DoxyCompactList}\small\item\em Removes an item from this armor set. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item}{IGame\+Item}} $>$ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_a490b798bd999b29daf90bdffefdaebb8}{Get\+All\+Items}} ()
+\begin{DoxyCompactList}\small\item\em Gets all items directly contained in this armor set. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_a0c5d27bb2975898084709dcc8cb41b33}{Get\+Total\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Gets the total value of all items in this armor set. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_a2459808bccd2e9c480130bea8abb7d5a}{Get\+Item\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Gets the total count of all items in this armor set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_a546921e35b339a4aca68e260d752e4f7}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name of this armor set. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages equipped armor pieces as a collection. Can contain both individual armor pieces and other armor sets. 
+
+Both \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item}{Defence\+Item} and \doxylink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set}{Equipped\+Armor\+Set} implement \doxylink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item}{IGame\+Item}, allowing them to be treated uniformly. 
+
+Uses recursive aggregation to calculate total values from nested structures. This allows for nested armor sets and flexible armor organization. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Simple\ usage\ with\ leafs:}}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ad63bbfb643a5833206931b2871a7c4bb}{EquippedArmorSet}}\ armor\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ad63bbfb643a5833206931b2871a7c4bb}{EquippedArmorSet}}(\textcolor{stringliteral}{"{}Full\ Plate"{}});}
+\DoxyCodeLine{armor.Add(\textcolor{keyword}{new}\ DefenceItem(\textcolor{stringliteral}{"{}Helmet"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{ArmorSlot}}.Head,\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{ArmorType}}.Plate,\ 10));}
+\DoxyCodeLine{armor.Add(\textcolor{keyword}{new}\ DefenceItem(\textcolor{stringliteral}{"{}Chest"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{ArmorSlot}}.Chest,\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{ArmorType}}.Plate,\ 20));}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ totalDefense\ =\ armor.GetTotalValue();\ \textcolor{comment}{//\ 30}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Nested\ composites:}}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ad63bbfb643a5833206931b2871a7c4bb}{EquippedArmorSet}}\ upperBody\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ad63bbfb643a5833206931b2871a7c4bb}{EquippedArmorSet}}(\textcolor{stringliteral}{"{}Upper\ Body"{}});}
+\DoxyCodeLine{upperBody.Add(\textcolor{keyword}{new}\ DefenceItem(\textcolor{stringliteral}{"{}Helmet"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{ArmorSlot}}.Head,\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{ArmorType}}.Plate,\ 10));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ad63bbfb643a5833206931b2871a7c4bb}{EquippedArmorSet}}\ fullSet\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ad63bbfb643a5833206931b2871a7c4bb}{EquippedArmorSet}}(\textcolor{stringliteral}{"{}Full\ Set"{}});}
+\DoxyCodeLine{fullSet.Add(upperBody);\ \textcolor{comment}{//\ Composite\ contains\ another\ composite!}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ total\ =\ fullSet.GetTotalValue();\ \textcolor{comment}{//\ Recursive\ aggregation}}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item}{IGame\+Item}, \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item}{Defence\+Item}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-constructors}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ad63bbfb643a5833206931b2871a7c4bb}\index{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet@{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet}!EquippedArmorSet@{EquippedArmorSet}}
+\index{EquippedArmorSet@{EquippedArmorSet}!Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet@{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet}}
+\doxysubsubsection{\texorpdfstring{EquippedArmorSet()}{EquippedArmorSet()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ad63bbfb643a5833206931b2871a7c4bb} 
+Mandatory2\+DGame\+Framework.\+Composite.\+Implementations.\+Equipped\+Armor\+Set.\+Equipped\+Armor\+Set (\begin{DoxyParamCaption}\item[{string}]{name}{ = {\ttfamily "{}Equipped~Armor"{}}}\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set}{Equipped\+Armor\+Set} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Optional name for this armor set. Defaults to "{}\+Equipped Armor"{}.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ab4c71fe8154dc8d165cdde5a02b8531e}\index{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet@{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet}!Add@{Add}}
+\index{Add@{Add}!Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet@{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet}}
+\doxysubsubsection{\texorpdfstring{Add()}{Add()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ab4c71fe8154dc8d165cdde5a02b8531e} 
+void Mandatory2\+DGame\+Framework.\+Composite.\+Implementations.\+Equipped\+Armor\+Set.\+Add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item}{IGame\+Item}}}]{item}{}\end{DoxyParamCaption})}
+
+
+
+Adds an item to this armor set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The item to add. Can be a \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item}{Defence\+Item} or another \doxylink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set}{Equipped\+Armor\+Set}.\\
+\hline
+\end{DoxyParams}
+
+
+Accepts any \doxylink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item}{IGame\+Item}, allowing nested armor sets.
+
+Duplicate items are not added. Null items are ignored.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{armor.Add(\textcolor{keyword}{new}\ DefenceItem(\textcolor{stringliteral}{"{}Helmet"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{ArmorSlot}}.Head,\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{ArmorType}}.Plate,\ 10));}
+\DoxyCodeLine{armor.Add(\textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ad63bbfb643a5833206931b2871a7c4bb}{EquippedArmorSet}}(\textcolor{stringliteral}{"{}Nested\ Set"{}}));\ \textcolor{comment}{//\ Can\ add\ composites!}}
+
+\end{DoxyCode}
+ \Hypertarget{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_a490b798bd999b29daf90bdffefdaebb8}\index{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet@{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet}!GetAllItems@{GetAllItems}}
+\index{GetAllItems@{GetAllItems}!Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet@{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet}}
+\doxysubsubsection{\texorpdfstring{GetAllItems()}{GetAllItems()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_a490b798bd999b29daf90bdffefdaebb8} 
+List$<$ \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item}{IGame\+Item}} $>$ Mandatory2\+DGame\+Framework.\+Composite.\+Implementations.\+Equipped\+Armor\+Set.\+Get\+All\+Items (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets all items directly contained in this armor set. 
+
+\begin{DoxyReturn}{Returns}
+A copy of the items list to prevent external modification.
+\end{DoxyReturn}
+
+
+Does not recursively return nested items; only direct children.\Hypertarget{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_a2459808bccd2e9c480130bea8abb7d5a}\index{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet@{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet}!GetItemCount@{GetItemCount}}
+\index{GetItemCount@{GetItemCount}!Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet@{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet}}
+\doxysubsubsection{\texorpdfstring{GetItemCount()}{GetItemCount()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_a2459808bccd2e9c480130bea8abb7d5a} 
+int Mandatory2\+DGame\+Framework.\+Composite.\+Implementations.\+Equipped\+Armor\+Set.\+Get\+Item\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the total count of all items in this armor set. 
+
+\begin{DoxyReturn}{Returns}
+The total number of individual items, recursively counted from all nested structures.
+\end{DoxyReturn}
+
+
+Each individual item returns 1, armor sets return the sum of their children. 
+
+This allows accurate counting even with deeply nested structures. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ad63bbfb643a5833206931b2871a7c4bb}{EquippedArmorSet}}\ \textcolor{keyword}{set}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ad63bbfb643a5833206931b2871a7c4bb}{EquippedArmorSet}}();}
+\DoxyCodeLine{\textcolor{keyword}{set}.Add(\textcolor{keyword}{new}\ DefenceItem(\textcolor{stringliteral}{"{}Helmet"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{ArmorSlot}}.Head,\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{ArmorType}}.Plate,\ 10));}
+\DoxyCodeLine{\textcolor{keyword}{set}.Add(\textcolor{keyword}{new}\ DefenceItem(\textcolor{stringliteral}{"{}Chest"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{ArmorSlot}}.Chest,\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{ArmorType}}.Plate,\ 20));}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ count\ =\ \textcolor{keyword}{set}.GetItemCount();\ \textcolor{comment}{//\ Returns\ 2}}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_ab11b62c9cec9d4f442db1955992c9805}{Mandatory2\+DGame\+Framework.\+Composite.\+Interfaces.\+IGame\+Item}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_a0c5d27bb2975898084709dcc8cb41b33}\index{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet@{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet}!GetTotalValue@{GetTotalValue}}
+\index{GetTotalValue@{GetTotalValue}!Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet@{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet}}
+\doxysubsubsection{\texorpdfstring{GetTotalValue()}{GetTotalValue()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_a0c5d27bb2975898084709dcc8cb41b33} 
+int Mandatory2\+DGame\+Framework.\+Composite.\+Implementations.\+Equipped\+Armor\+Set.\+Get\+Total\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the total value of all items in this armor set. 
+
+\begin{DoxyReturn}{Returns}
+The sum of all item values, recursively aggregated from all children.
+\end{DoxyReturn}
+
+
+For armor items, value represents defense. 
+
+Individual items return their own defense value, armor sets sum all children\textquotesingle{}s values. This enables proper aggregation in nested structures. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ad63bbfb643a5833206931b2871a7c4bb}{EquippedArmorSet}}\ \textcolor{keyword}{set}\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_ad63bbfb643a5833206931b2871a7c4bb}{EquippedArmorSet}}();}
+\DoxyCodeLine{\textcolor{keyword}{set}.Add(\textcolor{keyword}{new}\ DefenceItem(\textcolor{stringliteral}{"{}Helmet"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{ArmorSlot}}.Head,\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{ArmorType}}.Plate,\ 10));}
+\DoxyCodeLine{\textcolor{keyword}{set}.Add(\textcolor{keyword}{new}\ DefenceItem(\textcolor{stringliteral}{"{}Chest"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{ArmorSlot}}.Chest,\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{ArmorType}}.Plate,\ 20));}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ total\ =\ \textcolor{keyword}{set}.GetTotalValue();\ \textcolor{comment}{//\ Returns\ 30\ (10\ +\ 20)}}
+
+\end{DoxyCode}
+ 
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_a6a74efe785c89910e5fb1fbbf099c11a}{Mandatory2\+DGame\+Framework.\+Composite.\+Interfaces.\+IGame\+Item}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_aa6a45cdbdf0e26069c7586ce8bafd0cd}\index{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet@{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet}!Remove@{Remove}}
+\index{Remove@{Remove}!Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet@{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet}}
+\doxysubsubsection{\texorpdfstring{Remove()}{Remove()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_aa6a45cdbdf0e26069c7586ce8bafd0cd} 
+bool Mandatory2\+DGame\+Framework.\+Composite.\+Implementations.\+Equipped\+Armor\+Set.\+Remove (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item}{IGame\+Item}}}]{item}{}\end{DoxyParamCaption})}
+
+
+
+Removes an item from this armor set. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The item to remove.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the item was removed; otherwise, {\ttfamily false}.
+\end{DoxyReturn}
+
+
+\label{doc-property-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_a546921e35b339a4aca68e260d752e4f7}\index{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet@{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet}!Name@{Name}}
+\index{Name@{Name}!Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet@{Mandatory2DGameFramework.Composite.Implementations.EquippedArmorSet}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set_a546921e35b339a4aca68e260d752e4f7} 
+string Mandatory2\+DGame\+Framework.\+Composite.\+Implementations.\+Equipped\+Armor\+Set.\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the name of this armor set. 
+
+The armor set\textquotesingle{}s name.
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_a757136188e8fc0cdbae82d12bcfdd211}{Mandatory2\+DGame\+Framework.\+Composite.\+Interfaces.\+IGame\+Item}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Composite/\+Implementations/Equipped\+Armor\+Set.\+cs\end{DoxyCompactItemize}

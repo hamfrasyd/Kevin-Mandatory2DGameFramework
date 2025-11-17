@@ -1,0 +1,5 @@
+var namespace_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory =
+[
+    [ "ConcreteFactories", "namespace_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories.html", "namespace_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories" ],
+    [ "IItemFactory", "interface_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_i_item_factory.html", "interface_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_i_item_factory" ]
+];

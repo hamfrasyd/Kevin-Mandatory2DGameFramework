@@ -1,0 +1,98 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Interfaces.\+IAttackable Interface Reference}
+\hypertarget{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable}{}\label{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable}\index{Mandatory2DGameFramework.Interfaces.IAttackable@{Mandatory2DGameFramework.Interfaces.IAttackable}}
+
+
+Interface for objects that can be attacked and take damage. Implemented by creatures and other damageable entities in the game world.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Interfaces.\+IAttackable\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.454545cm]{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable_a2a44daf94104009cfc3b4d9206f3777f}{Take\+Damage}} (int damage)
+\begin{DoxyCompactList}\small\item\em Takes damage from an attack. Defense values are applied internally. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable_ae4d025e5579b5dad171e8d10369b5281}{Is\+Alive}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a value indicating whether this object is still alive. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for objects that can be attacked and take damage. Implemented by creatures and other damageable entities in the game world. 
+
+This interface enables polymorphic targeting in combat. Any object implementing \doxylink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable}{IAttackable} can be the target of an attack, allowing for flexible combat mechanics. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{IAttackable\ target\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ab0cf20a6d45a1f00a50d33a20511a9d1a7ee7fa010d64b90a36803a8445f2e943}{Warrior}}(\textcolor{stringliteral}{"{}Enemy"{}},\ 1000);}
+\DoxyCodeLine{warrior.PerformAttack(target,\ range:\ 5);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordflow}{if}\ (!target.IsAlive)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \ Console.WriteLine(\textcolor{stringliteral}{"{}Target\ defeated!"{}});}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-func-members}
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable_a2a44daf94104009cfc3b4d9206f3777f}\index{Mandatory2DGameFramework.Interfaces.IAttackable@{Mandatory2DGameFramework.Interfaces.IAttackable}!TakeDamage@{TakeDamage}}
+\index{TakeDamage@{TakeDamage}!Mandatory2DGameFramework.Interfaces.IAttackable@{Mandatory2DGameFramework.Interfaces.IAttackable}}
+\doxysubsubsection{\texorpdfstring{TakeDamage()}{TakeDamage()}}
+{\footnotesize\ttfamily \label{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable_a2a44daf94104009cfc3b4d9206f3777f} 
+void Mandatory2\+DGame\+Framework.\+Interfaces.\+IAttackable.\+Take\+Damage (\begin{DoxyParamCaption}\item[{int}]{damage}{}\end{DoxyParamCaption})}
+
+
+
+Takes damage from an attack. Defense values are applied internally. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em damage} & The amount of incoming damage before defense reduction.\\
+\hline
+\end{DoxyParams}
+
+
+The actual damage taken may be less than the incoming damage due to armor and defense modifiers. If damage reduces HP to 0 or below, the object dies. 
+
+Implemented in \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ad04245b2a4397f6ed5836d46eb464918}{Mandatory2\+DGame\+Framework.\+Template.\+Base.\+Creature}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable_ae4d025e5579b5dad171e8d10369b5281}\index{Mandatory2DGameFramework.Interfaces.IAttackable@{Mandatory2DGameFramework.Interfaces.IAttackable}!IsAlive@{IsAlive}}
+\index{IsAlive@{IsAlive}!Mandatory2DGameFramework.Interfaces.IAttackable@{Mandatory2DGameFramework.Interfaces.IAttackable}}
+\doxysubsubsection{\texorpdfstring{IsAlive}{IsAlive}}
+{\footnotesize\ttfamily \label{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable_ae4d025e5579b5dad171e8d10369b5281} 
+bool Mandatory2\+DGame\+Framework.\+Interfaces.\+IAttackable.\+Is\+Alive\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets a value indicating whether this object is still alive. 
+
+{\ttfamily true} if alive (HP \texorpdfstring{$>$}{>} 0); otherwise, {\ttfamily false}.
+
+Implemented in \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ab81dcf0df6132c534e7b2d9429851087}{Mandatory2\+DGame\+Framework.\+Template.\+Base.\+Creature}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/\+Interfaces/IAttackable.\+cs\end{DoxyCompactItemize}

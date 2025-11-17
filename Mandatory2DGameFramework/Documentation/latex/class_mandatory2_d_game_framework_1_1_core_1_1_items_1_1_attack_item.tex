@@ -1,0 +1,266 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Attack\+Item Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item}{}\label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item}\index{Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}}
+
+
+Represents an attack item/weapon in the game. Implements \doxylink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}{IWeapon} interface.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Attack\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.671642cm]{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{Attack\+Item}} (string name, \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a44d3ad5220bea59ba6888819bd193b8e}{Weapon\+Type}} weapon\+Type, int damage, int range)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item}{Attack\+Item} class with required parameters. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a9c71e32cf9ed165b3da9c1c040fe8754}{Get\+Damage}} ()
+\begin{DoxyCompactList}\small\item\em Gets the damage value this weapon deals. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a93ca1f46e8cd9de7c994d46df5494997}{Get\+Range}} ()
+\begin{DoxyCompactList}\small\item\em Gets the attack range of this weapon. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_ad25e473e6f9d611120bd19d40bf901b1}{To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Returns a string representation of this weapon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}{Mandatory2\+DGame\+Framework.\+Core.\+World.\+World\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_ad3f9f54e03d16fc692389466f8e427f1}{World\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}{World\+Object} class with default property values. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_ab13641d82f10c97fef5ee924eaa2cc3d}{To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Returns a string representation of this world object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{Attack\+Item}} \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_abe9ac4bd1995067a82d90b80a6bf13a2}{operator+}} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{Attack\+Item}}? left, \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{Attack\+Item}}? right)
+\begin{DoxyCompactList}\small\item\em Combines two weapons for dual wielding using the + operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a3dc89b48660ec0c39cd293af09816f60}{Hit}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the damage dealt by this attack item. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a7462ffc3e4f673aa830bd077bea9eea9}{Range}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the range of the attack. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a1352e499cf11dc176ff5df6a23d2179b}{Value}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the value of this weapon (for trading/economy systems). \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a44d3ad5220bea59ba6888819bd193b8e}{Weapon\+Type}} \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a03a26a2dd15b2d44077b6c9e735bc830}{Type}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the type of weapon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}{Mandatory2\+DGame\+Framework.\+Core.\+World.\+World\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_a9d8cfa9344480bb48baa07dd0fd27d76}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the unique identifier for this world object. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_abab1f9f3a78289a2fd1555c24ad09616}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name of the world object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_a746e0cedcc4c4a2c5786275cf64dea35}{X}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the X coordinate position in the world. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_a264e647bcd1269a2d46e7e3ad59d41a1}{Y}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the Y coordinate position in the world. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_ac38f4d87b9ab7dc3b2289f40e6b3a7ce}{Removeable}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a value indicating whether this object can be removed from the world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}{Mandatory2\+DGame\+Framework.\+Interfaces.\+IWeapon}}}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_a1c67cee96d91bdef0e682c8dd40be014}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the name of the weapon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents an attack item/weapon in the game. Implements \doxylink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}{IWeapon} interface. 
+
+Weapons are created by item factories and can be equipped by creatures. Supports operator overloading (+) for dual wielding functionality. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ weapon}}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{AttackItem}}\ sword\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{AttackItem}}(\textcolor{stringliteral}{"{}Excalibur"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a44d3ad5220bea59ba6888819bd193b8e}{WeaponType}}.Sword,\ 50,\ 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Dual\ wield}}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{AttackItem}}\ dagger\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{AttackItem}}(\textcolor{stringliteral}{"{}Dagger"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a44d3ad5220bea59ba6888819bd193b8e}{WeaponType}}.Dagger,\ 10,\ 1);}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{AttackItem}}\ dualWield\ =\ sword\ +\ dagger;\ \textcolor{comment}{//\ Combined:\ 60\ damage}}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}{IWeapon}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-constructors}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}\index{Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}!AttackItem@{AttackItem}}
+\index{AttackItem@{AttackItem}!Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}}
+\doxysubsubsection{\texorpdfstring{AttackItem()}{AttackItem()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea} 
+Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Attack\+Item.\+Attack\+Item (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{\mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a44d3ad5220bea59ba6888819bd193b8e}{Weapon\+Type}}}]{weapon\+Type}{, }\item[{int}]{damage}{, }\item[{int}]{range}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item}{Attack\+Item} class with required parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the weapon.\\
+\hline
+{\em weapon\+Type} & Type of weapon.\\
+\hline
+{\em damage} & Damage value the weapon deals.\\
+\hline
+{\em range} & Attack range of the weapon.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{AttackItem}}\ sword\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{AttackItem}}(\textcolor{stringliteral}{"{}Iron\ Sword"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a44d3ad5220bea59ba6888819bd193b8e}{WeaponType}}.Sword,\ 30,\ 1);}
+
+\end{DoxyCode}
+ 
+
+\label{doc-func-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a9c71e32cf9ed165b3da9c1c040fe8754}\index{Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}!GetDamage@{GetDamage}}
+\index{GetDamage@{GetDamage}!Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}}
+\doxysubsubsection{\texorpdfstring{GetDamage()}{GetDamage()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a9c71e32cf9ed165b3da9c1c040fe8754} 
+int Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Attack\+Item.\+Get\+Damage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the damage value this weapon deals. 
+
+\begin{DoxyReturn}{Returns}
+The damage value from \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a3dc89b48660ec0c39cd293af09816f60}{Hit} property.
+\end{DoxyReturn}
+
+
+Implements \doxylink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_aa29fdf012ddc8ddf6db0d0f12dfa114d}{IWeapon.\+Get\+Damage}.
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_aa29fdf012ddc8ddf6db0d0f12dfa114d}{Mandatory2\+DGame\+Framework.\+Interfaces.\+IWeapon}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a93ca1f46e8cd9de7c994d46df5494997}\index{Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}!GetRange@{GetRange}}
+\index{GetRange@{GetRange}!Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}}
+\doxysubsubsection{\texorpdfstring{GetRange()}{GetRange()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a93ca1f46e8cd9de7c994d46df5494997} 
+int Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Attack\+Item.\+Get\+Range (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the attack range of this weapon. 
+
+\begin{DoxyReturn}{Returns}
+The range value from \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a7462ffc3e4f673aa830bd077bea9eea9}{Range} property.
+\end{DoxyReturn}
+
+
+Implements \doxylink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_ae8b562f1a7db38c55c4dd08dc3ceffd9}{IWeapon.\+Get\+Range}.
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_ae8b562f1a7db38c55c4dd08dc3ceffd9}{Mandatory2\+DGame\+Framework.\+Interfaces.\+IWeapon}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_abe9ac4bd1995067a82d90b80a6bf13a2}\index{Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}!operator+@{operator+}}
+\index{operator+@{operator+}!Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}}
+\doxysubsubsection{\texorpdfstring{operator+()}{operator+()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_abe9ac4bd1995067a82d90b80a6bf13a2} 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{Attack\+Item}} Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Attack\+Item.\+operator+ (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{Attack\+Item}}?}]{left}{, }\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{Attack\+Item}}?}]{right}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Combines two weapons for dual wielding using the + operator. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em left} & The first weapon (main hand).\\
+\hline
+{\em right} & The second weapon (off hand).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A new \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item}{Attack\+Item} with combined damage and maximum range. Returns non-\/null weapon if only one is provided, or empty hands if both are null. 
+\end{DoxyReturn}
+
+
+Demonstrates operator overload requirement.
+
+Combined weapon inherits the type from the left weapon.
+
+Damage is additive, range uses the maximum of the two weapons.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{AttackItem}}\ sword\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{AttackItem}}(\textcolor{stringliteral}{"{}Sword"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a44d3ad5220bea59ba6888819bd193b8e}{WeaponType}}.Sword,\ 30,\ 1);}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{AttackItem}}\ dagger\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{AttackItem}}(\textcolor{stringliteral}{"{}Dagger"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a44d3ad5220bea59ba6888819bd193b8e}{WeaponType}}.Dagger,\ 15,\ 1);}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a048e8a1d3831257c676bffa0518679ea}{AttackItem}}\ dualWield\ =\ sword\ +\ dagger;}
+\DoxyCodeLine{\textcolor{comment}{//\ Result:\ "{}Sword\ \&amp;\ Dagger"{}\ with\ 45\ damage}}
+
+\end{DoxyCode}
+ \Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_ad25e473e6f9d611120bd19d40bf901b1}\index{Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}!ToString@{ToString}}
+\index{ToString@{ToString}!Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_ad25e473e6f9d611120bd19d40bf901b1} 
+override string Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Attack\+Item.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns a string representation of this weapon. 
+
+\begin{DoxyReturn}{Returns}
+A formatted string containing the weapon\textquotesingle{}s name, damage, and range.
+\end{DoxyReturn}
+
+
+\label{doc-property-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a3dc89b48660ec0c39cd293af09816f60}\index{Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}!Hit@{Hit}}
+\index{Hit@{Hit}!Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}}
+\doxysubsubsection{\texorpdfstring{Hit}{Hit}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a3dc89b48660ec0c39cd293af09816f60} 
+int Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Attack\+Item.\+Hit\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the damage dealt by this attack item. 
+
+The damage value. Cannot be negative.\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a7462ffc3e4f673aa830bd077bea9eea9}\index{Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}!Range@{Range}}
+\index{Range@{Range}!Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}}
+\doxysubsubsection{\texorpdfstring{Range}{Range}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a7462ffc3e4f673aa830bd077bea9eea9} 
+int Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Attack\+Item.\+Range\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the range of the attack. 
+
+The range value. 1 for melee, higher for ranged weapons. Cannot be negative.\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a03a26a2dd15b2d44077b6c9e735bc830}\index{Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}!Type@{Type}}
+\index{Type@{Type}!Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}}
+\doxysubsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a03a26a2dd15b2d44077b6c9e735bc830} 
+\mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a44d3ad5220bea59ba6888819bd193b8e}{Weapon\+Type}} Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Attack\+Item.\+Type\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the type of weapon. 
+
+The weapon type.
+
+Cannot be changed after construction to maintain weapon identity.\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a1352e499cf11dc176ff5df6a23d2179b}\index{Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}!Value@{Value}}
+\index{Value@{Value}!Mandatory2DGameFramework.Core.Items.AttackItem@{Mandatory2DGameFramework.Core.Items.AttackItem}}
+\doxysubsubsection{\texorpdfstring{Value}{Value}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a1352e499cf11dc176ff5df6a23d2179b} 
+int Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Attack\+Item.\+Value\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the value of this weapon (for trading/economy systems). 
+
+The weapon\textquotesingle{}s value. Cannot be negative.
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/\+Items/Attack\+Item.\+cs\end{DoxyCompactItemize}

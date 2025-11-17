@@ -1,0 +1,138 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Core.\+World.\+World\+Object Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}{}\label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}\index{Mandatory2DGameFramework.Core.World.WorldObject@{Mandatory2DGameFramework.Core.World.WorldObject}}
+
+
+Base class for all objects that exist in the game world. Provides common properties for positioning and management.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Core.\+World.\+World\+Object\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.671642cm]{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_ad3f9f54e03d16fc692389466f8e427f1}{World\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}{World\+Object} class with default property values. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_ab13641d82f10c97fef5ee924eaa2cc3d}{To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Returns a string representation of this world object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_a9d8cfa9344480bb48baa07dd0fd27d76}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the unique identifier for this world object. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_abab1f9f3a78289a2fd1555c24ad09616}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name of the world object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_a746e0cedcc4c4a2c5786275cf64dea35}{X}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the X coordinate position in the world. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_a264e647bcd1269a2d46e7e3ad59d41a1}{Y}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the Y coordinate position in the world. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_ac38f4d87b9ab7dc3b2289f40e6b3a7ce}{Removeable}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a value indicating whether this object can be removed from the world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all objects that exist in the game world. Provides common properties for positioning and management. 
+
+This serves as the foundation for all items, weapons, armor, and other world objects. Inheriting from this class allows objects to be placed in the world and tracked. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item}{Attack\+Item}, \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item}{Defence\+Item}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-constructors}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_ad3f9f54e03d16fc692389466f8e427f1}\index{Mandatory2DGameFramework.Core.World.WorldObject@{Mandatory2DGameFramework.Core.World.WorldObject}!WorldObject@{WorldObject}}
+\index{WorldObject@{WorldObject}!Mandatory2DGameFramework.Core.World.WorldObject@{Mandatory2DGameFramework.Core.World.WorldObject}}
+\doxysubsubsection{\texorpdfstring{WorldObject()}{WorldObject()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_ad3f9f54e03d16fc692389466f8e427f1} 
+Mandatory2\+DGame\+Framework.\+Core.\+World.\+World\+Object.\+World\+Object (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}{World\+Object} class with default property values. 
+
+Default values\+: Name = empty string, Position = (0, 0), Removeable = false. A unique ID is automatically assigned. 
+
+\label{doc-func-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_ab13641d82f10c97fef5ee924eaa2cc3d}\index{Mandatory2DGameFramework.Core.World.WorldObject@{Mandatory2DGameFramework.Core.World.WorldObject}!ToString@{ToString}}
+\index{ToString@{ToString}!Mandatory2DGameFramework.Core.World.WorldObject@{Mandatory2DGameFramework.Core.World.WorldObject}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_ab13641d82f10c97fef5ee924eaa2cc3d} 
+override string Mandatory2\+DGame\+Framework.\+Core.\+World.\+World\+Object.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns a string representation of this world object. 
+
+\begin{DoxyReturn}{Returns}
+A formatted string containing the object\textquotesingle{}s type, name, ID, position, and removeable status.
+\end{DoxyReturn}
+
+
+\label{doc-property-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_a9d8cfa9344480bb48baa07dd0fd27d76}\index{Mandatory2DGameFramework.Core.World.WorldObject@{Mandatory2DGameFramework.Core.World.WorldObject}!Id@{Id}}
+\index{Id@{Id}!Mandatory2DGameFramework.Core.World.WorldObject@{Mandatory2DGameFramework.Core.World.WorldObject}}
+\doxysubsubsection{\texorpdfstring{Id}{Id}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_a9d8cfa9344480bb48baa07dd0fd27d76} 
+int Mandatory2\+DGame\+Framework.\+Core.\+World.\+World\+Object.\+Id\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the unique identifier for this world object. 
+
+The unique ID assigned at creation.\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_abab1f9f3a78289a2fd1555c24ad09616}\index{Mandatory2DGameFramework.Core.World.WorldObject@{Mandatory2DGameFramework.Core.World.WorldObject}!Name@{Name}}
+\index{Name@{Name}!Mandatory2DGameFramework.Core.World.WorldObject@{Mandatory2DGameFramework.Core.World.WorldObject}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_abab1f9f3a78289a2fd1555c24ad09616} 
+string Mandatory2\+DGame\+Framework.\+Core.\+World.\+World\+Object.\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the name of the world object. 
+
+The object\textquotesingle{}s name.\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_ac38f4d87b9ab7dc3b2289f40e6b3a7ce}\index{Mandatory2DGameFramework.Core.World.WorldObject@{Mandatory2DGameFramework.Core.World.WorldObject}!Removeable@{Removeable}}
+\index{Removeable@{Removeable}!Mandatory2DGameFramework.Core.World.WorldObject@{Mandatory2DGameFramework.Core.World.WorldObject}}
+\doxysubsubsection{\texorpdfstring{Removeable}{Removeable}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_ac38f4d87b9ab7dc3b2289f40e6b3a7ce} 
+bool Mandatory2\+DGame\+Framework.\+Core.\+World.\+World\+Object.\+Removeable\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets a value indicating whether this object can be removed from the world. 
+
+{\ttfamily true} if removeable; otherwise, {\ttfamily false}.\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_a746e0cedcc4c4a2c5786275cf64dea35}\index{Mandatory2DGameFramework.Core.World.WorldObject@{Mandatory2DGameFramework.Core.World.WorldObject}!X@{X}}
+\index{X@{X}!Mandatory2DGameFramework.Core.World.WorldObject@{Mandatory2DGameFramework.Core.World.WorldObject}}
+\doxysubsubsection{\texorpdfstring{X}{X}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_a746e0cedcc4c4a2c5786275cf64dea35} 
+int Mandatory2\+DGame\+Framework.\+Core.\+World.\+World\+Object.\+X\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the X coordinate position in the world. 
+
+The X coordinate.\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_a264e647bcd1269a2d46e7e3ad59d41a1}\index{Mandatory2DGameFramework.Core.World.WorldObject@{Mandatory2DGameFramework.Core.World.WorldObject}!Y@{Y}}
+\index{Y@{Y}!Mandatory2DGameFramework.Core.World.WorldObject@{Mandatory2DGameFramework.Core.World.WorldObject}}
+\doxysubsubsection{\texorpdfstring{Y}{Y}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_a264e647bcd1269a2d46e7e3ad59d41a1} 
+int Mandatory2\+DGame\+Framework.\+Core.\+World.\+World\+Object.\+Y\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the Y coordinate position in the world. 
+
+The Y coordinate.
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/\+World/World\+Object.\+cs\end{DoxyCompactItemize}

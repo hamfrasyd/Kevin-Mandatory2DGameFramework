@@ -1,0 +1,85 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Strategy.\+Interfaces.\+IAttack\+Strategy Interface Reference}
+\hypertarget{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy}{}\label{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy}\index{Mandatory2DGameFramework.Strategy.Interfaces.IAttackStrategy@{Mandatory2DGameFramework.Strategy.Interfaces.IAttackStrategy}}
+
+
+Interface for attack damage calculations. Enables different attack algorithms that can be swapped at runtime.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Strategy.\+Interfaces.\+IAttack\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.206897cm]{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy_a69c173fedf782d51b5313d1fc0178582}{Attack}} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}} attacker, int range)
+\begin{DoxyCompactList}\small\item\em Calculates attack damage based on attacker state and range. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for attack damage calculations. Enables different attack algorithms that can be swapped at runtime. 
+
+Different strategies provide different combat mechanics\+: 
+\begin{DoxyItemize}
+\item {\bfseries{Melee\+Attack\+Strategy\+:}} Bonus damage when HP \texorpdfstring{$<$}{<} 50\% 
+\item {\bfseries{Ranged\+Attack\+Strategy\+:}} Bonus damage when range ≥ 20 
+\end{DoxyItemize}
+
+Strategies are set via \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_af508823977531ecadb03fefcc96cccd9}{Creature.\+Set\+Attack\+Strategy} and used in \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a684dc265d1c88902c6b8cd7527a3ba8e}{Creature.\+Perform\+Attack}. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ creature\ with\ strategy}}
+\DoxyCodeLine{Creature\ warrior\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ab0cf20a6d45a1f00a50d33a20511a9d1a7ee7fa010d64b90a36803a8445f2e943}{Warrior}}(\textcolor{stringliteral}{"{}Bob"{}},\ 1000);}
+\DoxyCodeLine{\textcolor{comment}{//\ Warrior\ uses\ MeleeAttackStrategy\ by\ default}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Change\ strategy\ at\ runtime}}
+\DoxyCodeLine{warrior.SetAttackStrategy(\textcolor{keyword}{new}\ RangedAttackStrategy());}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Attack\ uses\ the\ current\ strategy}}
+\DoxyCodeLine{warrior.PerformAttack(enemy,\ range:\ 25);}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+Melee\+Attack\+Strategy, Ranged\+Attack\+Strategy, \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-func-members}
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy_a69c173fedf782d51b5313d1fc0178582}\index{Mandatory2DGameFramework.Strategy.Interfaces.IAttackStrategy@{Mandatory2DGameFramework.Strategy.Interfaces.IAttackStrategy}!Attack@{Attack}}
+\index{Attack@{Attack}!Mandatory2DGameFramework.Strategy.Interfaces.IAttackStrategy@{Mandatory2DGameFramework.Strategy.Interfaces.IAttackStrategy}}
+\doxysubsubsection{\texorpdfstring{Attack()}{Attack()}}
+{\footnotesize\ttfamily \label{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy_a69c173fedf782d51b5313d1fc0178582} 
+int Mandatory2\+DGame\+Framework.\+Strategy.\+Interfaces.\+IAttack\+Strategy.\+Attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}}}]{attacker}{, }\item[{int}]{range}{}\end{DoxyParamCaption})}
+
+
+
+Calculates attack damage based on attacker state and range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attacker} & The creature performing the attack.\\
+\hline
+{\em range} & The distance to the target.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The calculated base damage before additional modifiers.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_melee_attack_strategy_aa38333c7500e4b20cadef2f579b187dd}{Mandatory2\+DGame\+Framework.\+Strategy.\+Implementations.\+Melee\+Attack\+Strategy}}, and \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_ranged_attack_strategy_ae0356b4e37aa8f86b4fb4adb36f60c27}{Mandatory2\+DGame\+Framework.\+Strategy.\+Implementations.\+Ranged\+Attack\+Strategy}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Strategy/\+Interfaces/IAttack\+Strategy.\+cs\end{DoxyCompactItemize}

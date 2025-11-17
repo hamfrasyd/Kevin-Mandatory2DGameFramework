@@ -1,0 +1,133 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Decorator.\+Concrete\+Decorators.\+Weaken\+Defence\+Decorator Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator}{}\label{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator}\index{Mandatory2DGameFramework.Decorator.ConcreteDecorators.WeakenDefenceDecorator@{Mandatory2DGameFramework.Decorator.ConcreteDecorators.WeakenDefenceDecorator}}
+
+
+Concrete decorator that weakens defense value. Decreases the defense value of a wrapped defense item.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Decorator.\+Concrete\+Decorators.\+Weaken\+Defence\+Decorator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator_af7e006c74cf0db2a42e6e73ce3190a4c}{Weaken\+Defence\+Decorator}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} item)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator}{Weaken\+Defence\+Decorator} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator}{Mandatory2\+DGame\+Framework.\+Decorator.\+Base.\+Defence\+Item\+Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a5d301123c9a8a8a63ec3bb2745733306}{Defence\+Item\+Decorator}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} item)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator}{Defence\+Item\+Decorator} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator_a426f40c20a516852a873e88e7e1f65d4}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the name with "{}(\+Weakened)"{} suffix to indicate the weakening effect. \end{DoxyCompactList}\item 
+override int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator_a66a3417d07e830d38a6eb1200ad0051a}{Defense}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the weakened defense value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator}{Mandatory2\+DGame\+Framework.\+Decorator.\+Base.\+Defence\+Item\+Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a9b2ec3ec71bde5878baacad1da9d7349}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the name of the defense item. Can be overridden to modify the name. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a7c86d3aedd1876695bb285dfa912b70a}{Defense}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the defense value. Can be overridden to modify the defense value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator}{Mandatory2\+DGame\+Framework.\+Decorator.\+Base.\+Defence\+Item\+Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} {\bfseries \+\_\+wrapped\+Item}
+\begin{DoxyCompactList}\small\item\em The wrapped defense item that this decorator modifies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete decorator that weakens defense value. Decreases the defense value of a wrapped defense item. 
+
+This decorator wraps a defense item and decreases its defense value by Weaken\+Amount (default is 3). The defense value cannot go below zero -\/ negative values are clamped to 0. 
+
+Useful for representing damaged, cursed, or corroded armor. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{IDefenceItem\ helmet\ =\ \textcolor{keyword}{new}\ DefenceItem(\textcolor{stringliteral}{"{}Iron\ Helmet"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{ArmorSlot}}.Head,\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{ArmorType}}.Plate,\ 10);}
+\DoxyCodeLine{IDefenceItem\ weakened\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator_af7e006c74cf0db2a42e6e73ce3190a4c}{WeakenDefenceDecorator}}(helmet);}
+\DoxyCodeLine{}
+\DoxyCodeLine{Console.WriteLine(weakened.Defense);\ \textcolor{comment}{//\ 7\ (10\ -\/\ WeakenAmount)}}
+\DoxyCodeLine{Console.WriteLine(weakened.Name);\ \ \ \ \textcolor{comment}{//\ "{}Iron\ Helmet\ (Weakened)"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Defense\ cannot\ go\ below\ 0:}}
+\DoxyCodeLine{IDefenceItem\ weak\ =\ \textcolor{keyword}{new}\ DefenceItem(\textcolor{stringliteral}{"{}Cloth"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{ArmorSlot}}.Chest,\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{ArmorType}}.Cloth,\ 2);}
+\DoxyCodeLine{IDefenceItem\ veryWeak\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator_af7e006c74cf0db2a42e6e73ce3190a4c}{WeakenDefenceDecorator}}(weak);}
+\DoxyCodeLine{Console.WriteLine(veryWeak.Defense);\ \textcolor{comment}{//\ 0\ (not\ negative)}}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a5d301123c9a8a8a63ec3bb2745733306}{Defence\+Item\+Decorator}, \doxylink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator}{Boost\+Defence\+Decorator}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-constructors}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator_af7e006c74cf0db2a42e6e73ce3190a4c}\index{Mandatory2DGameFramework.Decorator.ConcreteDecorators.WeakenDefenceDecorator@{Mandatory2DGameFramework.Decorator.ConcreteDecorators.WeakenDefenceDecorator}!WeakenDefenceDecorator@{WeakenDefenceDecorator}}
+\index{WeakenDefenceDecorator@{WeakenDefenceDecorator}!Mandatory2DGameFramework.Decorator.ConcreteDecorators.WeakenDefenceDecorator@{Mandatory2DGameFramework.Decorator.ConcreteDecorators.WeakenDefenceDecorator}}
+\doxysubsubsection{\texorpdfstring{WeakenDefenceDecorator()}{WeakenDefenceDecorator()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator_af7e006c74cf0db2a42e6e73ce3190a4c} 
+Mandatory2\+DGame\+Framework.\+Decorator.\+Concrete\+Decorators.\+Weaken\+Defence\+Decorator.\+Weaken\+Defence\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}}}]{item}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator}{Weaken\+Defence\+Decorator} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The defense item to weaken.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-property-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator_a66a3417d07e830d38a6eb1200ad0051a}\index{Mandatory2DGameFramework.Decorator.ConcreteDecorators.WeakenDefenceDecorator@{Mandatory2DGameFramework.Decorator.ConcreteDecorators.WeakenDefenceDecorator}!Defense@{Defense}}
+\index{Defense@{Defense}!Mandatory2DGameFramework.Decorator.ConcreteDecorators.WeakenDefenceDecorator@{Mandatory2DGameFramework.Decorator.ConcreteDecorators.WeakenDefenceDecorator}}
+\doxysubsubsection{\texorpdfstring{Defense}{Defense}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator_a66a3417d07e830d38a6eb1200ad0051a} 
+override int Mandatory2\+DGame\+Framework.\+Decorator.\+Concrete\+Decorators.\+Weaken\+Defence\+Decorator.\+Defense\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the weakened defense value. 
+
+The wrapped item\textquotesingle{}s defense minus Weaken\+Amount, minimum value of 0. 
+
+Defense cannot be negative; values below 0 are clamped to 0.
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item_a9a52f09c4c3a43d361d35c43123b627a}{Mandatory2\+DGame\+Framework.\+Decorator.\+Interfaces.\+IDefence\+Item}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator_a426f40c20a516852a873e88e7e1f65d4}\index{Mandatory2DGameFramework.Decorator.ConcreteDecorators.WeakenDefenceDecorator@{Mandatory2DGameFramework.Decorator.ConcreteDecorators.WeakenDefenceDecorator}!Name@{Name}}
+\index{Name@{Name}!Mandatory2DGameFramework.Decorator.ConcreteDecorators.WeakenDefenceDecorator@{Mandatory2DGameFramework.Decorator.ConcreteDecorators.WeakenDefenceDecorator}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator_a426f40c20a516852a873e88e7e1f65d4} 
+override string Mandatory2\+DGame\+Framework.\+Decorator.\+Concrete\+Decorators.\+Weaken\+Defence\+Decorator.\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the name with "{}(\+Weakened)"{} suffix to indicate the weakening effect. 
+
+The wrapped item\textquotesingle{}s name with "{} (\+Weakened)"{} appended.
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item_aa5cc1b82509d924baffbe7717238bcdc}{Mandatory2\+DGame\+Framework.\+Decorator.\+Interfaces.\+IDefence\+Item}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Decorator/\+Concrete\+Decorators/Weaken\+Defence\+Decorator.\+cs\end{DoxyCompactItemize}

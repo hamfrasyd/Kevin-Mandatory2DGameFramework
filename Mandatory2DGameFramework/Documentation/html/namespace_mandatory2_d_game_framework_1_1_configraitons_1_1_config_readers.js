@@ -1,0 +1,4 @@
+var namespace_mandatory2_d_game_framework_1_1_configraitons_1_1_config_readers =
+[
+    [ "GameConfig", "class_mandatory2_d_game_framework_1_1_configraitons_1_1_config_readers_1_1_game_config.html", "class_mandatory2_d_game_framework_1_1_configraitons_1_1_config_readers_1_1_game_config" ]
+];

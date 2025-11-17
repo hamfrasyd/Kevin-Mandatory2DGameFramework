@@ -1,0 +1,105 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Interfaces.\+IWeapon Interface Reference}
+\hypertarget{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}{}\label{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}\index{Mandatory2DGameFramework.Interfaces.IWeapon@{Mandatory2DGameFramework.Interfaces.IWeapon}}
+
+
+Interface for all weapons in the game. Defines the contract for weapon types that can be equipped and used in combat.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Interfaces.\+IWeapon\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_aa29fdf012ddc8ddf6db0d0f12dfa114d}{Get\+Damage}} ()
+\begin{DoxyCompactList}\small\item\em Gets the damage value this weapon deals. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_ae8b562f1a7db38c55c4dd08dc3ceffd9}{Get\+Range}} ()
+\begin{DoxyCompactList}\small\item\em Gets the attack range of this weapon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_a1c67cee96d91bdef0e682c8dd40be014}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the name of the weapon. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for all weapons in the game. Defines the contract for weapon types that can be equipped and used in combat. 
+
+Weapons are created by item factories and can be equipped by creatures. All weapons provide damage and range values for combat calculations. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{IWeapon\ sword\ =\ \textcolor{keyword}{new}\ AttackItem(\textcolor{stringliteral}{"{}Excalibur"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a44d3ad5220bea59ba6888819bd193b8e}{WeaponType}}.Sword,\ 50,\ 1);}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ damage\ =\ sword.GetDamage();\ \textcolor{comment}{//\ Returns\ 50}}
+\DoxyCodeLine{creature.EquipWeapon(sword);}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item}{Attack\+Item}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-func-members}
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_aa29fdf012ddc8ddf6db0d0f12dfa114d}\index{Mandatory2DGameFramework.Interfaces.IWeapon@{Mandatory2DGameFramework.Interfaces.IWeapon}!GetDamage@{GetDamage}}
+\index{GetDamage@{GetDamage}!Mandatory2DGameFramework.Interfaces.IWeapon@{Mandatory2DGameFramework.Interfaces.IWeapon}}
+\doxysubsubsection{\texorpdfstring{GetDamage()}{GetDamage()}}
+{\footnotesize\ttfamily \label{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_aa29fdf012ddc8ddf6db0d0f12dfa114d} 
+int Mandatory2\+DGame\+Framework.\+Interfaces.\+IWeapon.\+Get\+Damage (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the damage value this weapon deals. 
+
+\begin{DoxyReturn}{Returns}
+The damage value as an integer.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a9c71e32cf9ed165b3da9c1c040fe8754}{Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Attack\+Item}}.
+
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_ae8b562f1a7db38c55c4dd08dc3ceffd9}\index{Mandatory2DGameFramework.Interfaces.IWeapon@{Mandatory2DGameFramework.Interfaces.IWeapon}!GetRange@{GetRange}}
+\index{GetRange@{GetRange}!Mandatory2DGameFramework.Interfaces.IWeapon@{Mandatory2DGameFramework.Interfaces.IWeapon}}
+\doxysubsubsection{\texorpdfstring{GetRange()}{GetRange()}}
+{\footnotesize\ttfamily \label{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_ae8b562f1a7db38c55c4dd08dc3ceffd9} 
+int Mandatory2\+DGame\+Framework.\+Interfaces.\+IWeapon.\+Get\+Range (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the attack range of this weapon. 
+
+\begin{DoxyReturn}{Returns}
+The range value. 1 for melee weapons, higher for ranged weapons.
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_attack_item_a93ca1f46e8cd9de7c994d46df5494997}{Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Attack\+Item}}.
+
+
+
+\label{doc-property-members}
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_a1c67cee96d91bdef0e682c8dd40be014}\index{Mandatory2DGameFramework.Interfaces.IWeapon@{Mandatory2DGameFramework.Interfaces.IWeapon}!Name@{Name}}
+\index{Name@{Name}!Mandatory2DGameFramework.Interfaces.IWeapon@{Mandatory2DGameFramework.Interfaces.IWeapon}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily \label{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_a1c67cee96d91bdef0e682c8dd40be014} 
+string Mandatory2\+DGame\+Framework.\+Interfaces.\+IWeapon.\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the name of the weapon. 
+
+The weapon\textquotesingle{}s name.
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/\+Interfaces/IWeapon.\+cs\end{DoxyCompactItemize}

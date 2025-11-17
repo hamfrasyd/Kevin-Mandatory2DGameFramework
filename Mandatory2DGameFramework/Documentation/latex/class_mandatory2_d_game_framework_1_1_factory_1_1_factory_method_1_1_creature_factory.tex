@@ -1,0 +1,86 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Factory.\+Factory\+Method.\+Creature\+Factory Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_factory_1_1_factory_method_1_1_creature_factory}{}\label{class_mandatory2_d_game_framework_1_1_factory_1_1_factory_method_1_1_creature_factory}\index{Mandatory2DGameFramework.Factory.FactoryMethod.CreatureFactory@{Mandatory2DGameFramework.Factory.FactoryMethod.CreatureFactory}}
+
+
+\doxylink{namespace_mandatory2_d_game_framework_1_1_factory}{Factory} for creating creatures with appropriate equipment. Provides a centralized way to instantiate creatures.  
+
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}} \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_factory_1_1_factory_method_1_1_creature_factory_aaecb99818226a20505c31c25722c514e}{Create\+Creature}} (\mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ab0cf20a6d45a1f00a50d33a20511a9d1}{Class\+Type}} type, string name)
+\begin{DoxyCompactList}\small\item\em Creates a creature of the specified type with default equipment. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{namespace_mandatory2_d_game_framework_1_1_factory}{Factory} for creating creatures with appropriate equipment. Provides a centralized way to instantiate creatures. 
+
+Uses a switch-\/based implementation to create different creature types. Each creature type is created with class-\/appropriate starting equipment using item factories (\doxylink{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory}{Warrior\+Item\+Factory}, \doxylink{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_mage_item_factory}{Mage\+Item\+Factory}, \doxylink{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_hunter_item_factory}{Hunter\+Item\+Factory}). 
+
+Starting attributes by class\+: 
+\begin{DoxyTable}{2}{}{}{1}
+\SetCell{bg=\tableheadbgcolor,font=\bfseries}Class &\SetCell{bg=\tableheadbgcolor,font=\bfseries}HP / Weapon / Armor Type  \\
+\doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior}{Warrior} &1000 HP / Sword / Plate armor  \\
+\doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage}{Mage} &800 HP / Staff / Cloth armor  \\
+\doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_hunter}{Hunter} &900 HP / Gun / Leather armor  \\
+\end{DoxyTable}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ warrior}}
+\DoxyCodeLine{Creature\ warrior\ =\ CreatureFactory.CreateCreature(\mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ab0cf20a6d45a1f00a50d33a20511a9d1}{ClassType}}.Warrior,\ \textcolor{stringliteral}{"{}Bob"{}});}
+\DoxyCodeLine{\textcolor{comment}{//\ Bob\ is\ created\ with\ 1000\ HP\ and\ a\ Sword\ weapon}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ mage}}
+\DoxyCodeLine{Creature\ mage\ =\ CreatureFactory.CreateCreature(\mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ab0cf20a6d45a1f00a50d33a20511a9d1}{ClassType}}.Mage,\ \textcolor{stringliteral}{"{}Alice"{}});}
+\DoxyCodeLine{\textcolor{comment}{//\ Alice\ is\ created\ with\ 800\ HP\ and\ a\ Staff\ weapon}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Combat}}
+\DoxyCodeLine{warrior.PerformAttack(mage,\ range:\ 1);}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{namespace_mandatory2_d_game_framework_1_1_enums_ab0cf20a6d45a1f00a50d33a20511a9d1}{Class\+Type}, \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior}{Warrior}, \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage}{Mage}, \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_hunter}{Hunter}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-func-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_factory_1_1_factory_method_1_1_creature_factory_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_factory_1_1_factory_method_1_1_creature_factory_aaecb99818226a20505c31c25722c514e}\index{Mandatory2DGameFramework.Factory.FactoryMethod.CreatureFactory@{Mandatory2DGameFramework.Factory.FactoryMethod.CreatureFactory}!CreateCreature@{CreateCreature}}
+\index{CreateCreature@{CreateCreature}!Mandatory2DGameFramework.Factory.FactoryMethod.CreatureFactory@{Mandatory2DGameFramework.Factory.FactoryMethod.CreatureFactory}}
+\doxysubsubsection{\texorpdfstring{CreateCreature()}{CreateCreature()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_factory_1_1_factory_method_1_1_creature_factory_aaecb99818226a20505c31c25722c514e} 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}} Mandatory2\+DGame\+Framework.\+Factory.\+Factory\+Method.\+Creature\+Factory.\+Create\+Creature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ab0cf20a6d45a1f00a50d33a20511a9d1}{Class\+Type}}}]{type}{, }\item[{string}]{name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a creature of the specified type with default equipment. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em type} & The type of creature to create.\\
+\hline
+{\em name} & The name for the creature.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A fully initialized \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature} instance with\+: 
+\begin{DoxyItemize}
+\item Class-\/appropriate HP value 
+\item Default \doxylink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}{IWeapon} from corresponding item factory 
+\item Attack strategy matching the class type 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+Uses item factories to create appropriate equipment for each class. If an unknown type is provided, defaults to creating a \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior}{Warrior}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Factory/\+Factory\+Method/Creature\+Factory.\+cs\end{DoxyCompactItemize}

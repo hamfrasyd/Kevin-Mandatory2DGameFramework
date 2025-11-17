@@ -1,0 +1,169 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Template.\+Implementations.\+Mage Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage}{}\label{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage}\index{Mandatory2DGameFramework.Template.Implementations.Mage@{Mandatory2DGameFramework.Template.Implementations.Mage}}
+
+
+\doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage}{Mage} creature class -\/ ranged caster with medium HP and light armor. Overrides Apply\+Attack\+Modifiers to add bonus damage at high HP.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Template.\+Implementations.\+Mage\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage_a1a949dd94d47c0bcda7f0e20f737629c}{Mage}} (string name)
+\begin{DoxyCompactList}\small\item\em Initializes a new \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage}{Mage} with 800 HP and ranged attack strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Mandatory2\+DGame\+Framework.\+Template.\+Base.\+Creature}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a9ca1bfa68235846627f2aa8b21d2ef53}{Attach}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer}{ICreature\+Observer}} observer)
+\begin{DoxyCompactList}\small\item\em Attaches an observer to receive notifications about this creature\textquotesingle{}s events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ab3556155b9c2a08346c942693702d5ca}{Detach}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer}{ICreature\+Observer}} observer)
+\begin{DoxyCompactList}\small\item\em Detaches an observer from this creature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_af508823977531ecadb03fefcc96cccd9}{Set\+Attack\+Strategy}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy}{IAttack\+Strategy}} strategy)
+\begin{DoxyCompactList}\small\item\em Sets the attack strategy for this creature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a684dc265d1c88902c6b8cd7527a3ba8e}{Perform\+Attack}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable}{IAttackable}} target, int range=0)
+\begin{DoxyCompactList}\small\item\em Performs an attack on the target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ad04245b2a4397f6ed5836d46eb464918}{Take\+Damage}} (int damage)
+\begin{DoxyCompactList}\small\item\em Takes damage from an attack, applying defense reduction. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a9eaed6affd81f12bbeb5aa101f423c4f}{Equip\+Weapon}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}{IWeapon}} weapon)
+\begin{DoxyCompactList}\small\item\em Equips a weapon for this creature. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a8087b3e4d629c6f4aa98b544557800e1}{To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Returns a comprehensive string representation of this creature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage_a764bb3fe9d2c3366647074463ea40e5a}{Apply\+Attack\+Modifiers}} (int base\+Damage)
+\begin{DoxyCompactList}\small\item\em Applies Mage-\/specific damage modifiers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Mandatory2\+DGame\+Framework.\+Template.\+Base.\+Creature}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a9ec1f5b16d88ab6d5efa8cf34f278a70}{Creature}} (string name, int max\+HP)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature} class with required parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Mandatory2\+DGame\+Framework.\+Template.\+Base.\+Creature}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy}{IAttack\+Strategy}}? {\bfseries \+\_\+attack\+Strategy}
+\item 
+int {\bfseries \+\_\+base\+Auto\+Attack\+Damage}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Mandatory2\+DGame\+Framework.\+Template.\+Base.\+Creature}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a4b8d59f99e4489b969aa41ff75f06e21}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the unique identifier for this creature. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a41a44f9f88bd97541fe5045e8bc41891}{Base\+Auto\+Attack\+Damage}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the default base damage when unarmed. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a517c72b912a593b50d5d71118a277325}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name of the creature. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set}{Equipped\+Armor\+Set}} \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a7b1ff0bc9f73b05873c4e082e991de1d}{Equipped\+Armor}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the equipped armor set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}{IWeapon}}? \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ad20cb142204712b9a0cd084cd668514f}{Equipped\+Weapon}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the currently equipped weapon. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ab4e86d66f98170e5e682f46343034cc5}{XCoordinate}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the X coordinate position in the world. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a7920329dee16a774ba3a041011bce2e7}{YCoordinate}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the Y coordinate position in the world. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ab81dcf0df6132c534e7b2d9429851087}{Is\+Alive}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a value indicating whether this creature is alive. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a906cd7b54608555a57c06e4611c17aa7}{Max\+HP}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the maximum hit points for this creature. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a509441d1d96f8d0673c556cf99971c11}{Hit\+Point}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the current hit points. Automatically notifies observers when changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage}{Mage} creature class -\/ ranged caster with medium HP and light armor. Overrides Apply\+Attack\+Modifiers to add bonus damage at high HP. 
+
+{\bfseries{Class Characteristics\+:}} 
+\begin{DoxyItemize}
+\item {\bfseries{HP\+:}} 800 (medium, lower than \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior}{Warrior}) 
+\item {\bfseries{\doxylink{namespace_mandatory2_d_game_framework_1_1_strategy}{Strategy}\+:}} Uses \doxylink{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_ranged_attack_strategy}{Ranged\+Attack\+Strategy} for long-\/distance attacks 
+\item {\bfseries{Armor\+:}} Cloth material (lowest defense, prioritizes mobility) 
+\item {\bfseries{Weapon\+:}} Staff (moderate damage, medium-\/long range) 
+\item {\bfseries{Special\+:}} Bonus +10 damage when HP is above 80 (focused casting) 
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ mage}}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage_a1a949dd94d47c0bcda7f0e20f737629c}{Mage}}\ mage\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage_a1a949dd94d47c0bcda7f0e20f737629c}{Mage}}(\textcolor{stringliteral}{"{}Alice"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Equip\ light\ gear}}
+\DoxyCodeLine{IItemFactory\ factory\ =\ \textcolor{keyword}{new}\ MageItemFactory();}
+\DoxyCodeLine{mage.EquipWeapon(factory.CreateWeapon(\textcolor{stringliteral}{"{}Arcane\ Staff"{}}));}
+\DoxyCodeLine{mage.EquippedArmor.Add(factory.CreateChestArmor(\textcolor{stringliteral}{"{}Magic\ Robe"{}}));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Focused\ attack\ at\ high\ HP}}
+\DoxyCodeLine{mage.PerformAttack(enemy,\ range:\ 25);\ \textcolor{comment}{//\ +10\ bonus\ if\ HP\ >\ 80}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Normal\ attack\ after\ taking\ damage}}
+\DoxyCodeLine{mage.TakeDamage(50);\ \textcolor{comment}{//\ HP\ now\ 750/800}}
+\DoxyCodeLine{mage.PerformAttack(enemy,\ range:\ 25);\ \textcolor{comment}{//\ No\ bonus}}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}, \doxylink{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_ranged_attack_strategy}{Ranged\+Attack\+Strategy}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-constructors}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage_a1a949dd94d47c0bcda7f0e20f737629c}\index{Mandatory2DGameFramework.Template.Implementations.Mage@{Mandatory2DGameFramework.Template.Implementations.Mage}!Mage@{Mage}}
+\index{Mage@{Mage}!Mandatory2DGameFramework.Template.Implementations.Mage@{Mandatory2DGameFramework.Template.Implementations.Mage}}
+\doxysubsubsection{\texorpdfstring{Mage()}{Mage()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage_a1a949dd94d47c0bcda7f0e20f737629c} 
+Mandatory2\+DGame\+Framework.\+Template.\+Implementations.\+Mage.\+Mage (\begin{DoxyParamCaption}\item[{string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a new \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage}{Mage} with 800 HP and ranged attack strategy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the mage.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage_a764bb3fe9d2c3366647074463ea40e5a}\index{Mandatory2DGameFramework.Template.Implementations.Mage@{Mandatory2DGameFramework.Template.Implementations.Mage}!ApplyAttackModifiers@{ApplyAttackModifiers}}
+\index{ApplyAttackModifiers@{ApplyAttackModifiers}!Mandatory2DGameFramework.Template.Implementations.Mage@{Mandatory2DGameFramework.Template.Implementations.Mage}}
+\doxysubsubsection{\texorpdfstring{ApplyAttackModifiers()}{ApplyAttackModifiers()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage_a764bb3fe9d2c3366647074463ea40e5a} 
+override int Mandatory2\+DGame\+Framework.\+Template.\+Implementations.\+Mage.\+Apply\+Attack\+Modifiers (\begin{DoxyParamCaption}\item[{int}]{base\+Damage}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Applies Mage-\/specific damage modifiers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em base\+Damage} & The base damage from the attack strategy.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{namespace_mandatory2_d_game_framework_1_1_template_1_1_base}{Base} damage plus 10 if HP is above 80, otherwise unchanged.
+\end{DoxyReturn}
+
+
+Provides bonus damage when at high HP (above 80), representing focused magical power when uninjured. 
+
+Reimplemented from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a4bda5e2de31f4cae8723f352ba15f89e}{Mandatory2\+DGame\+Framework.\+Template.\+Base.\+Creature}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Template/\+Implementations/Mage.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,133 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Template.\+Implementations.\+Hunter Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_hunter}{}\label{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_hunter}\index{Mandatory2DGameFramework.Template.Implementations.Hunter@{Mandatory2DGameFramework.Template.Implementations.Hunter}}
+
+
+\doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_hunter}{Hunter} creature class -\/ ranged attacker with medium-\/high HP and medium armor. Uses default attack modifier implementation (no class-\/specific bonuses).  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Template.\+Implementations.\+Hunter\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_hunter}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_hunter_a656a2e6b5f5cccbab4e1efa076f9b938}{Hunter}} (string name)
+\begin{DoxyCompactList}\small\item\em Initializes a new \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_hunter}{Hunter} with 900 HP and ranged attack strategy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Mandatory2\+DGame\+Framework.\+Template.\+Base.\+Creature}}}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a9ca1bfa68235846627f2aa8b21d2ef53}{Attach}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer}{ICreature\+Observer}} observer)
+\begin{DoxyCompactList}\small\item\em Attaches an observer to receive notifications about this creature\textquotesingle{}s events. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ab3556155b9c2a08346c942693702d5ca}{Detach}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer}{ICreature\+Observer}} observer)
+\begin{DoxyCompactList}\small\item\em Detaches an observer from this creature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_af508823977531ecadb03fefcc96cccd9}{Set\+Attack\+Strategy}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy}{IAttack\+Strategy}} strategy)
+\begin{DoxyCompactList}\small\item\em Sets the attack strategy for this creature. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a684dc265d1c88902c6b8cd7527a3ba8e}{Perform\+Attack}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable}{IAttackable}} target, int range=0)
+\begin{DoxyCompactList}\small\item\em Performs an attack on the target. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ad04245b2a4397f6ed5836d46eb464918}{Take\+Damage}} (int damage)
+\begin{DoxyCompactList}\small\item\em Takes damage from an attack, applying defense reduction. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a9eaed6affd81f12bbeb5aa101f423c4f}{Equip\+Weapon}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}{IWeapon}} weapon)
+\begin{DoxyCompactList}\small\item\em Equips a weapon for this creature. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a8087b3e4d629c6f4aa98b544557800e1}{To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Returns a comprehensive string representation of this creature. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Mandatory2\+DGame\+Framework.\+Template.\+Base.\+Creature}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a9ec1f5b16d88ab6d5efa8cf34f278a70}{Creature}} (string name, int max\+HP)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature} class with required parameters. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a4bda5e2de31f4cae8723f352ba15f89e}{Apply\+Attack\+Modifiers}} (int base\+Damage)
+\begin{DoxyCompactList}\small\item\em Applies class-\/specific modifiers to base damage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Mandatory2\+DGame\+Framework.\+Template.\+Base.\+Creature}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy}{IAttack\+Strategy}}? {\bfseries \+\_\+attack\+Strategy}
+\item 
+int {\bfseries \+\_\+base\+Auto\+Attack\+Damage}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Mandatory2\+DGame\+Framework.\+Template.\+Base.\+Creature}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a4b8d59f99e4489b969aa41ff75f06e21}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the unique identifier for this creature. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a41a44f9f88bd97541fe5045e8bc41891}{Base\+Auto\+Attack\+Damage}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the default base damage when unarmed. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a517c72b912a593b50d5d71118a277325}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name of the creature. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set}{Equipped\+Armor\+Set}} \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a7b1ff0bc9f73b05873c4e082e991de1d}{Equipped\+Armor}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the equipped armor set. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}{IWeapon}}? \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ad20cb142204712b9a0cd084cd668514f}{Equipped\+Weapon}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the currently equipped weapon. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ab4e86d66f98170e5e682f46343034cc5}{XCoordinate}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the X coordinate position in the world. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a7920329dee16a774ba3a041011bce2e7}{YCoordinate}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the Y coordinate position in the world. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_ab81dcf0df6132c534e7b2d9429851087}{Is\+Alive}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets a value indicating whether this creature is alive. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a906cd7b54608555a57c06e4611c17aa7}{Max\+HP}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the maximum hit points for this creature. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature_a509441d1d96f8d0673c556cf99971c11}{Hit\+Point}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the current hit points. Automatically notifies observers when changed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_hunter}{Hunter} creature class -\/ ranged attacker with medium-\/high HP and medium armor. Uses default attack modifier implementation (no class-\/specific bonuses). 
+
+{\bfseries{Class Characteristics\+:}} 
+\begin{DoxyItemize}
+\item {\bfseries{HP\+:}} 900 (between \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior}{Warrior} and \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_mage}{Mage}) 
+\item {\bfseries{\doxylink{namespace_mandatory2_d_game_framework_1_1_strategy}{Strategy}\+:}} Uses \doxylink{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_ranged_attack_strategy}{Ranged\+Attack\+Strategy} for long-\/range attacks 
+\item {\bfseries{Armor\+:}} Leather material (medium defense, balanced) 
+\item {\bfseries{Weapon\+:}} Gun (moderate damage, very long range) 
+\item {\bfseries{Special\+:}} No class-\/specific modifiers, relies on strategy bonuses 
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ hunter}}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_hunter_a656a2e6b5f5cccbab4e1efa076f9b938}{Hunter}}\ hunter\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_hunter_a656a2e6b5f5cccbab4e1efa076f9b938}{Hunter}}(\textcolor{stringliteral}{"{}Robin"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Equip\ medium\ gear}}
+\DoxyCodeLine{IItemFactory\ factory\ =\ \textcolor{keyword}{new}\ HunterItemFactory();}
+\DoxyCodeLine{hunter.EquipWeapon(factory.CreateWeapon(\textcolor{stringliteral}{"{}Hunting\ Rifle"{}}));}
+\DoxyCodeLine{hunter.EquippedArmor.Add(factory.CreateChestArmor(\textcolor{stringliteral}{"{}Leather\ Tunic"{}}));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Long\ range\ attack\ with\ strategy\ bonus}}
+\DoxyCodeLine{hunter.PerformAttack(enemy,\ range:\ 30);\ \textcolor{comment}{//\ +50\%\ from\ RangedAttackStrategy}}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}, \doxylink{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_ranged_attack_strategy}{Ranged\+Attack\+Strategy}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-constructors}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_hunter_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_hunter_a656a2e6b5f5cccbab4e1efa076f9b938}\index{Mandatory2DGameFramework.Template.Implementations.Hunter@{Mandatory2DGameFramework.Template.Implementations.Hunter}!Hunter@{Hunter}}
+\index{Hunter@{Hunter}!Mandatory2DGameFramework.Template.Implementations.Hunter@{Mandatory2DGameFramework.Template.Implementations.Hunter}}
+\doxysubsubsection{\texorpdfstring{Hunter()}{Hunter()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_hunter_a656a2e6b5f5cccbab4e1efa076f9b938} 
+Mandatory2\+DGame\+Framework.\+Template.\+Implementations.\+Hunter.\+Hunter (\begin{DoxyParamCaption}\item[{string}]{name}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a new \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_hunter}{Hunter} with 900 HP and ranged attack strategy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the hunter.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Template/\+Implementations/Hunter.\+cs\end{DoxyCompactItemize}

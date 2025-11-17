@@ -1,0 +1,231 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Defence\+Item Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item}{}\label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item}\index{Mandatory2DGameFramework.Core.Items.DefenceItem@{Mandatory2DGameFramework.Core.Items.DefenceItem}}
+
+
+Represents a defensive item/armor in the game. Implements \doxylink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item} and \doxylink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item}{IGame\+Item} interfaces.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Defence\+Item\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=0.957265cm]{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_a685dea33ed9fa8901c388eb7dd4dd291}{Get\+Total\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Gets the total value of this armor piece. For armor, value equals defense. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_ac243615755505d9bc8cbc4375e4d6015}{Get\+Item\+Count}} ()
+\begin{DoxyCompactList}\small\item\em Gets the count of items. Always returns 1 for individual armor pieces. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_a7a36df5e3e02811b98104a224dd425f0}{Defence\+Item}} (string name, \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{Armor\+Slot}} armor\+Slot, \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{Armor\+Type}} armor\+Type, int defense)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item}{Defence\+Item} class with required parameters. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_ae292126b865699cc13c0a5d98b425679}{To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Returns a string representation of this armor piece. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}{Mandatory2\+DGame\+Framework.\+Core.\+World.\+World\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_ad3f9f54e03d16fc692389466f8e427f1}{World\+Object}} ()
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}{World\+Object} class with default property values. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_ab13641d82f10c97fef5ee924eaa2cc3d}{To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Returns a string representation of this world object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_ad33d89f532c4023a1c4bc98f382da531}{Defense}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the defense value -\/ amount of damage this armor reduces. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{Armor\+Slot}} \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_a5a2b4fb488bcc08164ed4abe9eab4192}{Armor\+Slot}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the armor slot where this item is equipped. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{Armor\+Type}} \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_aeed7ed34eef29f864d04cf5fe0a97b11}{Armor\+Type}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the material type of this armor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}{Mandatory2\+DGame\+Framework.\+Core.\+World.\+World\+Object}}}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_a9d8cfa9344480bb48baa07dd0fd27d76}{Id}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the unique identifier for this world object. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_abab1f9f3a78289a2fd1555c24ad09616}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name of the world object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_a746e0cedcc4c4a2c5786275cf64dea35}{X}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the X coordinate position in the world. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_a264e647bcd1269a2d46e7e3ad59d41a1}{Y}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the Y coordinate position in the world. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_ac38f4d87b9ab7dc3b2289f40e6b3a7ce}{Removeable}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets a value indicating whether this object can be removed from the world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{Mandatory2\+DGame\+Framework.\+Decorator.\+Interfaces.\+IDefence\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item_aa5cc1b82509d924baffbe7717238bcdc}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the name of the defense item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item}{Mandatory2\+DGame\+Framework.\+Composite.\+Interfaces.\+IGame\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_a757136188e8fc0cdbae82d12bcfdd211}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the name of this item. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Represents a defensive item/armor in the game. Implements \doxylink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item} and \doxylink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item}{IGame\+Item} interfaces. 
+
+Armor pieces can be\+: 
+\begin{DoxyItemize}
+\item Wrapped with decorators to modify defense values 
+\item Added to \doxylink{class_mandatory2_d_game_framework_1_1_composite_1_1_implementations_1_1_equipped_armor_set}{Equipped\+Armor\+Set} to create armor collections 
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ armor}}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_a7a36df5e3e02811b98104a224dd425f0}{DefenceItem}}\ helmet\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_a7a36df5e3e02811b98104a224dd425f0}{DefenceItem}}(\textcolor{stringliteral}{"{}Iron\ Helmet"{}},\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_a5a2b4fb488bcc08164ed4abe9eab4192}{ArmorSlot}}.Head,\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_aeed7ed34eef29f864d04cf5fe0a97b11}{ArmorType}}.Plate,\ 10);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Use\ with\ Decorator}}
+\DoxyCodeLine{IDefenceItem\ boosted\ =\ \textcolor{keyword}{new}\ BoostDefenceDecorator(helmet);}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ defense\ =\ boosted.Defense;\ \textcolor{comment}{//\ 15\ (10\ +\ 5)}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Use\ with\ Composite}}
+\DoxyCodeLine{creature.EquippedArmor.Add(helmet);}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}, \doxylink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item}{IGame\+Item}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-constructors}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_a7a36df5e3e02811b98104a224dd425f0}\index{Mandatory2DGameFramework.Core.Items.DefenceItem@{Mandatory2DGameFramework.Core.Items.DefenceItem}!DefenceItem@{DefenceItem}}
+\index{DefenceItem@{DefenceItem}!Mandatory2DGameFramework.Core.Items.DefenceItem@{Mandatory2DGameFramework.Core.Items.DefenceItem}}
+\doxysubsubsection{\texorpdfstring{DefenceItem()}{DefenceItem()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_a7a36df5e3e02811b98104a224dd425f0} 
+Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Defence\+Item.\+Defence\+Item (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{\mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{Armor\+Slot}}}]{armor\+Slot}{, }\item[{\mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{Armor\+Type}}}]{armor\+Type}{, }\item[{int}]{defense}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item}{Defence\+Item} class with required parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the armor piece.\\
+\hline
+{\em armor\+Slot} & Slot where this armor is equipped.\\
+\hline
+{\em armor\+Type} & Material type of the armor.\\
+\hline
+{\em defense} & Defense value provided by this armor.\\
+\hline
+\end{DoxyParams}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_a7a36df5e3e02811b98104a224dd425f0}{DefenceItem}}\ helmet\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_a7a36df5e3e02811b98104a224dd425f0}{DefenceItem}}(\textcolor{stringliteral}{"{}Iron\ Helmet"{}},\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_a5a2b4fb488bcc08164ed4abe9eab4192}{ArmorSlot}}.Head,\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_aeed7ed34eef29f864d04cf5fe0a97b11}{ArmorType}}.Plate,\ 10);}
+
+\end{DoxyCode}
+ 
+
+\label{doc-func-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_ac243615755505d9bc8cbc4375e4d6015}\index{Mandatory2DGameFramework.Core.Items.DefenceItem@{Mandatory2DGameFramework.Core.Items.DefenceItem}!GetItemCount@{GetItemCount}}
+\index{GetItemCount@{GetItemCount}!Mandatory2DGameFramework.Core.Items.DefenceItem@{Mandatory2DGameFramework.Core.Items.DefenceItem}}
+\doxysubsubsection{\texorpdfstring{GetItemCount()}{GetItemCount()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_ac243615755505d9bc8cbc4375e4d6015} 
+int Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Defence\+Item.\+Get\+Item\+Count (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the count of items. Always returns 1 for individual armor pieces. 
+
+\begin{DoxyReturn}{Returns}
+1 (since this is a single armor piece).
+\end{DoxyReturn}
+
+
+Implements \doxylink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_ab11b62c9cec9d4f442db1955992c9805}{IGame\+Item.\+Get\+Item\+Count}.
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_ab11b62c9cec9d4f442db1955992c9805}{Mandatory2\+DGame\+Framework.\+Composite.\+Interfaces.\+IGame\+Item}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_a685dea33ed9fa8901c388eb7dd4dd291}\index{Mandatory2DGameFramework.Core.Items.DefenceItem@{Mandatory2DGameFramework.Core.Items.DefenceItem}!GetTotalValue@{GetTotalValue}}
+\index{GetTotalValue@{GetTotalValue}!Mandatory2DGameFramework.Core.Items.DefenceItem@{Mandatory2DGameFramework.Core.Items.DefenceItem}}
+\doxysubsubsection{\texorpdfstring{GetTotalValue()}{GetTotalValue()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_a685dea33ed9fa8901c388eb7dd4dd291} 
+int Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Defence\+Item.\+Get\+Total\+Value (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets the total value of this armor piece. For armor, value equals defense. 
+
+\begin{DoxyReturn}{Returns}
+The defense value from \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_ad33d89f532c4023a1c4bc98f382da531}{Defense} property.
+\end{DoxyReturn}
+
+
+Implements \doxylink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_a6a74efe785c89910e5fb1fbbf099c11a}{IGame\+Item.\+Get\+Total\+Value}. Individual armor pieces return their own defense value. 
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_composite_1_1_interfaces_1_1_i_game_item_a6a74efe785c89910e5fb1fbbf099c11a}{Mandatory2\+DGame\+Framework.\+Composite.\+Interfaces.\+IGame\+Item}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_ae292126b865699cc13c0a5d98b425679}\index{Mandatory2DGameFramework.Core.Items.DefenceItem@{Mandatory2DGameFramework.Core.Items.DefenceItem}!ToString@{ToString}}
+\index{ToString@{ToString}!Mandatory2DGameFramework.Core.Items.DefenceItem@{Mandatory2DGameFramework.Core.Items.DefenceItem}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_ae292126b865699cc13c0a5d98b425679} 
+override string Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Defence\+Item.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns a string representation of this armor piece. 
+
+\begin{DoxyReturn}{Returns}
+A formatted string containing the armor\textquotesingle{}s name, slot, type, and defense value.
+\end{DoxyReturn}
+
+
+\label{doc-property-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_a5a2b4fb488bcc08164ed4abe9eab4192}\index{Mandatory2DGameFramework.Core.Items.DefenceItem@{Mandatory2DGameFramework.Core.Items.DefenceItem}!ArmorSlot@{ArmorSlot}}
+\index{ArmorSlot@{ArmorSlot}!Mandatory2DGameFramework.Core.Items.DefenceItem@{Mandatory2DGameFramework.Core.Items.DefenceItem}}
+\doxysubsubsection{\texorpdfstring{ArmorSlot}{ArmorSlot}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_a5a2b4fb488bcc08164ed4abe9eab4192} 
+\mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{Armor\+Slot}} Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Defence\+Item.\+Armor\+Slot\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the armor slot where this item is equipped. 
+
+The armor slot (Head, Chest, Legs, etc.).
+
+Cannot be changed after construction to maintain armor identity.\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_aeed7ed34eef29f864d04cf5fe0a97b11}\index{Mandatory2DGameFramework.Core.Items.DefenceItem@{Mandatory2DGameFramework.Core.Items.DefenceItem}!ArmorType@{ArmorType}}
+\index{ArmorType@{ArmorType}!Mandatory2DGameFramework.Core.Items.DefenceItem@{Mandatory2DGameFramework.Core.Items.DefenceItem}}
+\doxysubsubsection{\texorpdfstring{ArmorType}{ArmorType}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_aeed7ed34eef29f864d04cf5fe0a97b11} 
+\mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{Armor\+Type}} Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Defence\+Item.\+Armor\+Type\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the material type of this armor. 
+
+The armor material (Leather, Plate, Cloth).
+
+Cannot be changed after construction to maintain armor identity.\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_ad33d89f532c4023a1c4bc98f382da531}\index{Mandatory2DGameFramework.Core.Items.DefenceItem@{Mandatory2DGameFramework.Core.Items.DefenceItem}!Defense@{Defense}}
+\index{Defense@{Defense}!Mandatory2DGameFramework.Core.Items.DefenceItem@{Mandatory2DGameFramework.Core.Items.DefenceItem}}
+\doxysubsubsection{\texorpdfstring{Defense}{Defense}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_items_1_1_defence_item_ad33d89f532c4023a1c4bc98f382da531} 
+int Mandatory2\+DGame\+Framework.\+Core.\+Items.\+Defence\+Item.\+Defense\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the defense value -\/ amount of damage this armor reduces. 
+
+The defense value. Higher values provide more protection. Cannot be negative.
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item_a9a52f09c4c3a43d361d35c43123b627a}{Mandatory2\+DGame\+Framework.\+Decorator.\+Interfaces.\+IDefence\+Item}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/\+Items/Defence\+Item.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,243 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Factory.\+Abstract\+Factory.\+Concrete\+Factories.\+Warrior\+Item\+Factory Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory}{}\label{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory}\index{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory@{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory}}
+
+
+\doxylink{namespace_mandatory2_d_game_framework_1_1_factory}{Factory} for creating Warrior-\/themed equipment. Creates heavy Plate armor and melee Sword weapons.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Factory.\+Abstract\+Factory.\+Concrete\+Factories.\+Warrior\+Item\+Factory\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}{IWeapon}} \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_a260615d199c264b81da9f0d86f1e44c2}{Create\+Weapon}} (string name, int damage=90, int range=2)
+\begin{DoxyCompactList}\small\item\em Creates a Sword weapon for Warriors. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_a0e7c3409007b12ad09b25af6fc9dcc3b}{Create\+Helmet}} (string name, int defense=10)
+\begin{DoxyCompactList}\small\item\em Creates a helmet for this factory\textquotesingle{}s item family. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_af3652c4c0a925bf9593fd5d1fa662b8c}{Create\+Shoulder\+Armor}} (string name, int defense=8)
+\begin{DoxyCompactList}\small\item\em Creates shoulder armor for this factory\textquotesingle{}s item family. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_ae51b6bcfff81bd8fab1cfc64b5523944}{Create\+Chest\+Armor}} (string name, int defense=20)
+\begin{DoxyCompactList}\small\item\em Creates chest armor for this factory\textquotesingle{}s item family. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_a5df581b888a7ac2a32d7f2f3a2f44fd7}{Create\+Hand\+Armor}} (string name, int defense=6)
+\begin{DoxyCompactList}\small\item\em Creates hand armor for this factory\textquotesingle{}s item family. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_a63240b3438f2930678ce52a86ca80acb}{Create\+Leg\+Armor}} (string name, int defense=12)
+\begin{DoxyCompactList}\small\item\em Creates leg armor for this factory\textquotesingle{}s item family. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_a148f9aaa6d2704b55d10f0df602c3b6e}{Create\+Feet\+Armor}} (string name, int defense=7)
+\begin{DoxyCompactList}\small\item\em Creates feet armor for this factory\textquotesingle{}s item family. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{namespace_mandatory2_d_game_framework_1_1_factory}{Factory} for creating Warrior-\/themed equipment. Creates heavy Plate armor and melee Sword weapons. 
+
+This factory produces a family of items suitable for Warrior class characters\+: 
+\begin{DoxyItemize}
+\item {\bfseries{Weapon\+:}} Sword (high damage, melee range) 
+\item {\bfseries{Armor\+:}} Plate material (highest defense values) 
+\end{DoxyItemize}
+
+Default values\+: Weapon damage 90, armor defense ranges from 6-\/20 depending on slot. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{IItemFactory\ factory\ =\ \textcolor{keyword}{new}\ WarriorItemFactory();}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ a\ full\ warrior\ equipment\ set}}
+\DoxyCodeLine{IWeapon\ sword\ =\ factory.CreateWeapon(\textcolor{stringliteral}{"{}Battle\ Sword"{}});}
+\DoxyCodeLine{IDefenceItem\ helmet\ =\ factory.CreateHelmet(\textcolor{stringliteral}{"{}Plate\ Helmet"{}});}
+\DoxyCodeLine{IDefenceItem\ chest\ =\ factory.CreateChestArmor(\textcolor{stringliteral}{"{}Plate\ Mail"{}});}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ All\ armor\ is\ Plate\ type\ (consistent\ family)}}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ totalDefense\ =\ helmet.Defense\ +\ chest.Defense;\ \textcolor{comment}{//\ 10\ +\ 20\ =\ 30}}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{interface_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_i_item_factory}{IItem\+Factory}, \doxylink{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_mage_item_factory}{Mage\+Item\+Factory}, \doxylink{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_hunter_item_factory}{Hunter\+Item\+Factory}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-func-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_ae51b6bcfff81bd8fab1cfc64b5523944}\index{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory@{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory}!CreateChestArmor@{CreateChestArmor}}
+\index{CreateChestArmor@{CreateChestArmor}!Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory@{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory}}
+\doxysubsubsection{\texorpdfstring{CreateChestArmor()}{CreateChestArmor()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_ae51b6bcfff81bd8fab1cfc64b5523944} 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} Mandatory2\+DGame\+Framework.\+Factory.\+Abstract\+Factory.\+Concrete\+Factories.\+Warrior\+Item\+Factory.\+Create\+Chest\+Armor (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{int}]{defense}{ = {\ttfamily 20}}\end{DoxyParamCaption})}
+
+
+
+Creates chest armor for this factory\textquotesingle{}s item family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the chest armor.\\
+\hline
+{\em defense} & The defense value (default varies by factory).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Chest armor implementing \doxylink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item} for the Armor\+Slot.\+Chest slot.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_i_item_factory_a6de60c6d2b49c1a0376d9081410b9c06}{Mandatory2\+DGame\+Framework.\+Factory.\+Abstract\+Factory.\+IItem\+Factory}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_a148f9aaa6d2704b55d10f0df602c3b6e}\index{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory@{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory}!CreateFeetArmor@{CreateFeetArmor}}
+\index{CreateFeetArmor@{CreateFeetArmor}!Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory@{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory}}
+\doxysubsubsection{\texorpdfstring{CreateFeetArmor()}{CreateFeetArmor()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_a148f9aaa6d2704b55d10f0df602c3b6e} 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} Mandatory2\+DGame\+Framework.\+Factory.\+Abstract\+Factory.\+Concrete\+Factories.\+Warrior\+Item\+Factory.\+Create\+Feet\+Armor (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{int}]{defense}{ = {\ttfamily 7}}\end{DoxyParamCaption})}
+
+
+
+Creates feet armor for this factory\textquotesingle{}s item family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the feet armor.\\
+\hline
+{\em defense} & The defense value (default varies by factory).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Feet armor implementing \doxylink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item} for the Armor\+Slot.\+Feet slot.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_i_item_factory_a85818a70aaf8ea8c3d0d5e2e12474717}{Mandatory2\+DGame\+Framework.\+Factory.\+Abstract\+Factory.\+IItem\+Factory}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_a5df581b888a7ac2a32d7f2f3a2f44fd7}\index{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory@{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory}!CreateHandArmor@{CreateHandArmor}}
+\index{CreateHandArmor@{CreateHandArmor}!Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory@{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory}}
+\doxysubsubsection{\texorpdfstring{CreateHandArmor()}{CreateHandArmor()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_a5df581b888a7ac2a32d7f2f3a2f44fd7} 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} Mandatory2\+DGame\+Framework.\+Factory.\+Abstract\+Factory.\+Concrete\+Factories.\+Warrior\+Item\+Factory.\+Create\+Hand\+Armor (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{int}]{defense}{ = {\ttfamily 6}}\end{DoxyParamCaption})}
+
+
+
+Creates hand armor for this factory\textquotesingle{}s item family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the hand armor.\\
+\hline
+{\em defense} & The defense value (default varies by factory).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Hand armor implementing \doxylink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item} for the Armor\+Slot.\+Hands slot.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_i_item_factory_a1401f1437ef37ed13b70b4854d3f2a1d}{Mandatory2\+DGame\+Framework.\+Factory.\+Abstract\+Factory.\+IItem\+Factory}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_a0e7c3409007b12ad09b25af6fc9dcc3b}\index{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory@{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory}!CreateHelmet@{CreateHelmet}}
+\index{CreateHelmet@{CreateHelmet}!Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory@{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory}}
+\doxysubsubsection{\texorpdfstring{CreateHelmet()}{CreateHelmet()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_a0e7c3409007b12ad09b25af6fc9dcc3b} 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} Mandatory2\+DGame\+Framework.\+Factory.\+Abstract\+Factory.\+Concrete\+Factories.\+Warrior\+Item\+Factory.\+Create\+Helmet (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{int}]{defense}{ = {\ttfamily 10}}\end{DoxyParamCaption})}
+
+
+
+Creates a helmet for this factory\textquotesingle{}s item family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the helmet.\\
+\hline
+{\em defense} & The defense value (default varies by factory).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A helmet implementing \doxylink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item} for the Armor\+Slot.\+Head slot.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_i_item_factory_a6e5cb9c3c071cd3ff98f64465af8ce79}{Mandatory2\+DGame\+Framework.\+Factory.\+Abstract\+Factory.\+IItem\+Factory}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_a63240b3438f2930678ce52a86ca80acb}\index{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory@{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory}!CreateLegArmor@{CreateLegArmor}}
+\index{CreateLegArmor@{CreateLegArmor}!Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory@{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory}}
+\doxysubsubsection{\texorpdfstring{CreateLegArmor()}{CreateLegArmor()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_a63240b3438f2930678ce52a86ca80acb} 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} Mandatory2\+DGame\+Framework.\+Factory.\+Abstract\+Factory.\+Concrete\+Factories.\+Warrior\+Item\+Factory.\+Create\+Leg\+Armor (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{int}]{defense}{ = {\ttfamily 12}}\end{DoxyParamCaption})}
+
+
+
+Creates leg armor for this factory\textquotesingle{}s item family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the leg armor.\\
+\hline
+{\em defense} & The defense value (default varies by factory).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Leg armor implementing \doxylink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item} for the Armor\+Slot.\+Legs slot.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_i_item_factory_aea82c5555dfe58eec298f5fb067bc1fd}{Mandatory2\+DGame\+Framework.\+Factory.\+Abstract\+Factory.\+IItem\+Factory}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_af3652c4c0a925bf9593fd5d1fa662b8c}\index{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory@{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory}!CreateShoulderArmor@{CreateShoulderArmor}}
+\index{CreateShoulderArmor@{CreateShoulderArmor}!Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory@{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory}}
+\doxysubsubsection{\texorpdfstring{CreateShoulderArmor()}{CreateShoulderArmor()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_af3652c4c0a925bf9593fd5d1fa662b8c} 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} Mandatory2\+DGame\+Framework.\+Factory.\+Abstract\+Factory.\+Concrete\+Factories.\+Warrior\+Item\+Factory.\+Create\+Shoulder\+Armor (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{int}]{defense}{ = {\ttfamily 8}}\end{DoxyParamCaption})}
+
+
+
+Creates shoulder armor for this factory\textquotesingle{}s item family. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the shoulder armor.\\
+\hline
+{\em defense} & The defense value (default varies by factory).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Shoulder armor implementing \doxylink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item} for the Armor\+Slot.\+Shoulders slot.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_i_item_factory_a595d40198f856a9692db1f5fdd52cabf}{Mandatory2\+DGame\+Framework.\+Factory.\+Abstract\+Factory.\+IItem\+Factory}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_a260615d199c264b81da9f0d86f1e44c2}\index{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory@{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory}!CreateWeapon@{CreateWeapon}}
+\index{CreateWeapon@{CreateWeapon}!Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory@{Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories.WarriorItemFactory}}
+\doxysubsubsection{\texorpdfstring{CreateWeapon()}{CreateWeapon()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_concrete_factories_1_1_warrior_item_factory_a260615d199c264b81da9f0d86f1e44c2} 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}{IWeapon}} Mandatory2\+DGame\+Framework.\+Factory.\+Abstract\+Factory.\+Concrete\+Factories.\+Warrior\+Item\+Factory.\+Create\+Weapon (\begin{DoxyParamCaption}\item[{string}]{name}{, }\item[{int}]{damage}{ = {\ttfamily 90}, }\item[{int}]{range}{ = {\ttfamily 2}}\end{DoxyParamCaption})}
+
+
+
+Creates a Sword weapon for Warriors. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the weapon.\\
+\hline
+{\em damage} & The damage value. Default is 90.\\
+\hline
+{\em range} & The attack range. Default is 2.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxylink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon}{IWeapon} implementing Sword weapon.
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_factory_1_1_abstract_factory_1_1_i_item_factory_ad43a86b36f383cec3eee4f0bfbc3aa53}{Mandatory2\+DGame\+Framework.\+Factory.\+Abstract\+Factory.\+IItem\+Factory}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Factory/\+Abstract\+Factory/\+Concrete\+Factories/Warrior\+Item\+Factory.\+cs\end{DoxyCompactItemize}

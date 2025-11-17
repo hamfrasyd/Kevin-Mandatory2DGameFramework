@@ -1,0 +1,234 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Core.\+World.\+World Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world}{}\label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world}\index{Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}}
+
+
+Manages the game world including boundaries, objects, and creatures. Provides centralized management for all entities in the game.  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a7a57f9357a97bac8689c5a0e486164b7}{World}} (int maxX, int maxY, string name="{}Basic World"{})
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world}{World} class with the specified boundaries. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a2a2d745202c88e26d36bfbed5fe1e5d5}{Add\+World\+Object}} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}{World\+Object}} world\+Object)
+\begin{DoxyCompactList}\small\item\em Adds a world object to the world. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a6a515597a082cf9995f130c025250d79}{Remove\+World\+Object}} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}{World\+Object}} world\+Object)
+\begin{DoxyCompactList}\small\item\em Removes a world object from the world if it is marked as removeable. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}{World\+Object}} $>$ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_ab6027ef7a5d068aca79a9bd75f46ca0f}{Get\+World\+Objects}} ()
+\begin{DoxyCompactList}\small\item\em Gets all world objects currently in the world. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a1481da6e59ec4167bd8a109606d6b158}{Add\+Creature}} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}} creature)
+\begin{DoxyCompactList}\small\item\em Adds a creature to the world. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_ae541c53fac80ece87742b1c519a84688}{Remove\+Creature}} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}} creature)
+\begin{DoxyCompactList}\small\item\em Removes a creature from the world. \end{DoxyCompactList}\item 
+List$<$ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}} $>$ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_aaccd411265018e2e30dd902990efe0cf}{Get\+Creatures}} ()
+\begin{DoxyCompactList}\small\item\em Gets all creatures currently in the world. \end{DoxyCompactList}\item 
+override string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_acde2aa88ce8aaa0abaa8392247889fbd}{To\+String}} ()
+\begin{DoxyCompactList}\small\item\em Returns a string representation of this world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a589679a2e6bb0878e45e34e164019edc}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the name of the world. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a6cd80323d5ac0541f1a6ca29d4f0b4f1}{MaxX}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the maximum X-\/coordinate value allowed in the world. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a41671a5ba99bf2a893b8843e7a2af462}{MaxY}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets or sets the maximum Y-\/coordinate value allowed in the world. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the game world including boundaries, objects, and creatures. Provides centralized management for all entities in the game. 
+
+The \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world}{World} class maintains collections of world objects and creatures, and enforces world boundaries through validation. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a7a57f9357a97bac8689c5a0e486164b7}{World}}\ world\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a7a57f9357a97bac8689c5a0e486164b7}{World}}(100,\ 100,\ \textcolor{stringliteral}{"{}Fantasy\ World"{}});}
+\DoxyCodeLine{Creature\ warrior\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ab0cf20a6d45a1f00a50d33a20511a9d1a7ee7fa010d64b90a36803a8445f2e943}{Warrior}}(\textcolor{stringliteral}{"{}Bob"{}},\ 1000);}
+\DoxyCodeLine{world.AddCreature(warrior);}
+\DoxyCodeLine{}
+\DoxyCodeLine{List<Creature>\ allCreatures\ =\ world.GetCreatures();}
+
+\end{DoxyCode}
+ 
+
+\label{doc-constructors}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a7a57f9357a97bac8689c5a0e486164b7}\index{Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}!World@{World}}
+\index{World@{World}!Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}}
+\doxysubsubsection{\texorpdfstring{World()}{World()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a7a57f9357a97bac8689c5a0e486164b7} 
+Mandatory2\+DGame\+Framework.\+Core.\+World.\+World.\+World (\begin{DoxyParamCaption}\item[{int}]{maxX}{, }\item[{int}]{maxY}{, }\item[{string}]{name}{ = {\ttfamily "{}Basic~World"{}}}\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world}{World} class with the specified boundaries. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em maxX} & The maximum X coordinate for the world. Negative values are clamped to 0.\\
+\hline
+{\em maxY} & The maximum Y coordinate for the world. Negative values are clamped to 0.\\
+\hline
+{\em name} & Optional name for the world. Defaults to "{}\+Basic World"{} if null or empty.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a1481da6e59ec4167bd8a109606d6b158}\index{Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}!AddCreature@{AddCreature}}
+\index{AddCreature@{AddCreature}!Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}}
+\doxysubsubsection{\texorpdfstring{AddCreature()}{AddCreature()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a1481da6e59ec4167bd8a109606d6b158} 
+void Mandatory2\+DGame\+Framework.\+Core.\+World.\+World.\+Add\+Creature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}}}]{creature}{}\end{DoxyParamCaption})}
+
+
+
+Adds a creature to the world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em creature} & The creature to add.\\
+\hline
+\end{DoxyParams}
+
+
+Creatures are tracked separately from world objects for easier management. Null creatures are ignored. 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}
+
+
+\end{DoxySeeAlso}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a2a2d745202c88e26d36bfbed5fe1e5d5}\index{Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}!AddWorldObject@{AddWorldObject}}
+\index{AddWorldObject@{AddWorldObject}!Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}}
+\doxysubsubsection{\texorpdfstring{AddWorldObject()}{AddWorldObject()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a2a2d745202c88e26d36bfbed5fe1e5d5} 
+void Mandatory2\+DGame\+Framework.\+Core.\+World.\+World.\+Add\+World\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}{World\+Object}}}]{world\+Object}{}\end{DoxyParamCaption})}
+
+
+
+Adds a world object to the world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world\+Object} & The world object to add.\\
+\hline
+\end{DoxyParams}
+
+
+Objects added to the world can be tracked and managed centrally. Null objects are ignored. \Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_aaccd411265018e2e30dd902990efe0cf}\index{Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}!GetCreatures@{GetCreatures}}
+\index{GetCreatures@{GetCreatures}!Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}}
+\doxysubsubsection{\texorpdfstring{GetCreatures()}{GetCreatures()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_aaccd411265018e2e30dd902990efe0cf} 
+List$<$ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}} $>$ Mandatory2\+DGame\+Framework.\+Core.\+World.\+World.\+Get\+Creatures (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets all creatures currently in the world. 
+
+\begin{DoxyReturn}{Returns}
+A copy of the creatures list to prevent external modification.
+\end{DoxyReturn}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_ab6027ef7a5d068aca79a9bd75f46ca0f}\index{Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}!GetWorldObjects@{GetWorldObjects}}
+\index{GetWorldObjects@{GetWorldObjects}!Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}}
+\doxysubsubsection{\texorpdfstring{GetWorldObjects()}{GetWorldObjects()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_ab6027ef7a5d068aca79a9bd75f46ca0f} 
+List$<$ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}{World\+Object}} $>$ Mandatory2\+DGame\+Framework.\+Core.\+World.\+World.\+Get\+World\+Objects (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gets all world objects currently in the world. 
+
+\begin{DoxyReturn}{Returns}
+A copy of the world objects list to prevent external modification.
+\end{DoxyReturn}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_ae541c53fac80ece87742b1c519a84688}\index{Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}!RemoveCreature@{RemoveCreature}}
+\index{RemoveCreature@{RemoveCreature}!Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}}
+\doxysubsubsection{\texorpdfstring{RemoveCreature()}{RemoveCreature()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_ae541c53fac80ece87742b1c519a84688} 
+void Mandatory2\+DGame\+Framework.\+Core.\+World.\+World.\+Remove\+Creature (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}}}]{creature}{}\end{DoxyParamCaption})}
+
+
+
+Removes a creature from the world. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em creature} & The creature to remove.\\
+\hline
+\end{DoxyParams}
+
+
+Null creatures are ignored. \Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a6a515597a082cf9995f130c025250d79}\index{Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}!RemoveWorldObject@{RemoveWorldObject}}
+\index{RemoveWorldObject@{RemoveWorldObject}!Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}}
+\doxysubsubsection{\texorpdfstring{RemoveWorldObject()}{RemoveWorldObject()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a6a515597a082cf9995f130c025250d79} 
+void Mandatory2\+DGame\+Framework.\+Core.\+World.\+World.\+Remove\+World\+Object (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object}{World\+Object}}}]{world\+Object}{}\end{DoxyParamCaption})}
+
+
+
+Removes a world object from the world if it is marked as removeable. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em world\+Object} & The world object to remove.\\
+\hline
+\end{DoxyParams}
+
+
+Only objects with \doxylink{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_object_ac38f4d87b9ab7dc3b2289f40e6b3a7ce}{World\+Object.\+Removeable} set to {\ttfamily true} will be removed. Null objects are ignored. \Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_acde2aa88ce8aaa0abaa8392247889fbd}\index{Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}!ToString@{ToString}}
+\index{ToString@{ToString}!Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}}
+\doxysubsubsection{\texorpdfstring{ToString()}{ToString()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_acde2aa88ce8aaa0abaa8392247889fbd} 
+override string Mandatory2\+DGame\+Framework.\+Core.\+World.\+World.\+To\+String (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns a string representation of this world. 
+
+\begin{DoxyReturn}{Returns}
+A formatted string containing the world\textquotesingle{}s name and boundaries.
+\end{DoxyReturn}
+
+
+\label{doc-property-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a6cd80323d5ac0541f1a6ca29d4f0b4f1}\index{Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}!MaxX@{MaxX}}
+\index{MaxX@{MaxX}!Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}}
+\doxysubsubsection{\texorpdfstring{MaxX}{MaxX}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a6cd80323d5ac0541f1a6ca29d4f0b4f1} 
+int Mandatory2\+DGame\+Framework.\+Core.\+World.\+World.\+MaxX\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the maximum X-\/coordinate value allowed in the world. 
+
+The maximum X coordinate. Negative values are clamped to 0.\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a41671a5ba99bf2a893b8843e7a2af462}\index{Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}!MaxY@{MaxY}}
+\index{MaxY@{MaxY}!Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}}
+\doxysubsubsection{\texorpdfstring{MaxY}{MaxY}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a41671a5ba99bf2a893b8843e7a2af462} 
+int Mandatory2\+DGame\+Framework.\+Core.\+World.\+World.\+MaxY\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the maximum Y-\/coordinate value allowed in the world. 
+
+The maximum Y coordinate. Negative values are clamped to 0.\Hypertarget{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a589679a2e6bb0878e45e34e164019edc}\index{Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}!Name@{Name}}
+\index{Name@{Name}!Mandatory2DGameFramework.Core.World.World@{Mandatory2DGameFramework.Core.World.World}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_core_1_1_world_1_1_world_a589679a2e6bb0878e45e34e164019edc} 
+string Mandatory2\+DGame\+Framework.\+Core.\+World.\+World.\+Name\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Gets or sets the name of the world. 
+
+The world\textquotesingle{}s name.
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/\+World/World.\+cs\end{DoxyCompactItemize}

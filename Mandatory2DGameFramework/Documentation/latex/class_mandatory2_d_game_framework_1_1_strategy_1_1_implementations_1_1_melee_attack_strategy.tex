@@ -1,0 +1,88 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Strategy.\+Implementations.\+Melee\+Attack\+Strategy Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_melee_attack_strategy}{}\label{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_melee_attack_strategy}\index{Mandatory2DGameFramework.Strategy.Implementations.MeleeAttackStrategy@{Mandatory2DGameFramework.Strategy.Implementations.MeleeAttackStrategy}}
+
+
+Melee attack strategy that provides bonus damage when attacker\textquotesingle{}s HP is low. Designed for close-\/range combat.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Strategy.\+Implementations.\+Melee\+Attack\+Strategy\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_melee_attack_strategy}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_melee_attack_strategy_aa38333c7500e4b20cadef2f579b187dd}{Attack}} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}} attacker, int range)
+\begin{DoxyCompactList}\small\item\em Calculates melee attack damage with HP-\/based bonus. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Melee attack strategy that provides bonus damage when attacker\textquotesingle{}s HP is low. Designed for close-\/range combat. 
+
+This strategy is designed for melee fighters and provides a "{}berserker"{} mechanic\+: 
+\begin{DoxyItemize}
+\item {\bfseries{Normal\+:}} Uses \doxylink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_aa29fdf012ddc8ddf6db0d0f12dfa114d}{IWeapon.\+Get\+Damage} or default base damage if unarmed 
+\item {\bfseries{Low HP (below 50\%)\+:}} Applies 50\% damage bonus 
+\end{DoxyItemize}
+
+Used by default by \doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_implementations_1_1_warrior}{Warrior} class. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Warrior\ with\ MeleeAttackStrategy}}
+\DoxyCodeLine{Creature\ warrior\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ab0cf20a6d45a1f00a50d33a20511a9d1a7ee7fa010d64b90a36803a8445f2e943}{Warrior}}(\textcolor{stringliteral}{"{}Bob"{}},\ 1000);}
+\DoxyCodeLine{warrior.EquipWeapon(\textcolor{keyword}{new}\ AttackItem(\textcolor{stringliteral}{"{}Sword"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a44d3ad5220bea59ba6888819bd193b8e}{WeaponType}}.Sword,\ 30,\ 1));}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Normal\ attack:\ 30\ damage}}
+\DoxyCodeLine{warrior.PerformAttack(enemy,\ range:\ 1);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Take\ damage\ to\ go\ below\ 50\%\ HP}}
+\DoxyCodeLine{warrior.TakeDamage(600);\ \textcolor{comment}{//\ Now\ at\ 400/1000\ HP}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Berserk\ attack:\ 45\ damage\ (30\ *\ 1.5)}}
+\DoxyCodeLine{warrior.PerformAttack(enemy,\ range:\ 1);}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy}{IAttack\+Strategy}, \doxylink{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_ranged_attack_strategy}{Ranged\+Attack\+Strategy}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-func-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_melee_attack_strategy_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_melee_attack_strategy_aa38333c7500e4b20cadef2f579b187dd}\index{Mandatory2DGameFramework.Strategy.Implementations.MeleeAttackStrategy@{Mandatory2DGameFramework.Strategy.Implementations.MeleeAttackStrategy}!Attack@{Attack}}
+\index{Attack@{Attack}!Mandatory2DGameFramework.Strategy.Implementations.MeleeAttackStrategy@{Mandatory2DGameFramework.Strategy.Implementations.MeleeAttackStrategy}}
+\doxysubsubsection{\texorpdfstring{Attack()}{Attack()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_strategy_1_1_implementations_1_1_melee_attack_strategy_aa38333c7500e4b20cadef2f579b187dd} 
+int Mandatory2\+DGame\+Framework.\+Strategy.\+Implementations.\+Melee\+Attack\+Strategy.\+Attack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}}}]{attacker}{, }\item[{int}]{range}{}\end{DoxyParamCaption})}
+
+
+
+Calculates melee attack damage with HP-\/based bonus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attacker} & The creature performing the attack.\\
+\hline
+{\em range} & The distance to target (not used for melee calculations).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxylink{namespace_mandatory2_d_game_framework_1_1_template_1_1_base}{Base} damage from \doxylink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_weapon_aa29fdf012ddc8ddf6db0d0f12dfa114d}{IWeapon.\+Get\+Damage} (or default base damage if unarmed), multiplied by 1.\+5 if attacker\textquotesingle{}s HP is below 50\%. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy_a69c173fedf782d51b5313d1fc0178582}{Mandatory2\+DGame\+Framework.\+Strategy.\+Interfaces.\+IAttack\+Strategy}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Strategy/\+Implementations/Melee\+Attack\+Strategy.\+cs\end{DoxyCompactItemize}

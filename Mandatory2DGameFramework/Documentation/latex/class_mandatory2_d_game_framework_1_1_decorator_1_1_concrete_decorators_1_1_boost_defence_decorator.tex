@@ -1,0 +1,128 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Decorator.\+Concrete\+Decorators.\+Boost\+Defence\+Decorator Class Reference}
+\hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator}{}\label{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator}\index{Mandatory2DGameFramework.Decorator.ConcreteDecorators.BoostDefenceDecorator@{Mandatory2DGameFramework.Decorator.ConcreteDecorators.BoostDefenceDecorator}}
+
+
+Concrete decorator that boosts defense value. Increases the defense value of a wrapped defense item.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Decorator.\+Concrete\+Decorators.\+Boost\+Defence\+Decorator\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator_a277620af33b38e717f06ceecc3015302}{Boost\+Defence\+Decorator}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} item)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator}{Boost\+Defence\+Decorator} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator}{Mandatory2\+DGame\+Framework.\+Decorator.\+Base.\+Defence\+Item\+Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a5d301123c9a8a8a63ec3bb2745733306}{Defence\+Item\+Decorator}} (\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} item)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator}{Defence\+Item\+Decorator} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+override string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator_aa22c1447d97b24234ab378b8b75c3d00}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the name with "{}(\+Boosted)"{} suffix to indicate the boost effect. \end{DoxyCompactList}\item 
+override int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator_a4c3da3fc3b48ded4c95928feb54a2fd1}{Defense}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the boosted defense value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator}{Mandatory2\+DGame\+Framework.\+Decorator.\+Base.\+Defence\+Item\+Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual string \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a9b2ec3ec71bde5878baacad1da9d7349}{Name}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the name of the defense item. Can be overridden to modify the name. \end{DoxyCompactList}\item 
+virtual int \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a7c86d3aedd1876695bb285dfa912b70a}{Defense}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the defense value. Can be overridden to modify the defense value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator}{Mandatory2\+DGame\+Framework.\+Decorator.\+Base.\+Defence\+Item\+Decorator}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}} {\bfseries \+\_\+wrapped\+Item}
+\begin{DoxyCompactList}\small\item\em The wrapped defense item that this decorator modifies. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Concrete decorator that boosts defense value. Increases the defense value of a wrapped defense item. 
+
+This decorator wraps a defense item and increases its defense value by Boost\+Amount. The boost can be applied to any \doxylink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}, including other decorated items, allowing for decorator chaining. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{IDefenceItem\ helmet\ =\ \textcolor{keyword}{new}\ DefenceItem(\textcolor{stringliteral}{"{}Iron\ Helmet"{}},\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_a7cd61669d374179a13c4a08c7203eda1}{ArmorSlot}}.Head,\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ac523ba6e12651ab251c0b0cb90205f89}{ArmorType}}.Plate,\ 10);}
+\DoxyCodeLine{IDefenceItem\ boosted\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator_a277620af33b38e717f06ceecc3015302}{BoostDefenceDecorator}}(helmet);}
+\DoxyCodeLine{}
+\DoxyCodeLine{Console.WriteLine(boosted.Defense);\ \textcolor{comment}{//\ 15\ (10\ +\ 5)}}
+\DoxyCodeLine{Console.WriteLine(boosted.Name);\ \ \ \ \textcolor{comment}{//\ "{}Iron\ Helmet\ (Boosted)"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Chain\ decorators:}}
+\DoxyCodeLine{IDefenceItem\ doubleBoosted\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator_a277620af33b38e717f06ceecc3015302}{BoostDefenceDecorator}}(boosted);}
+\DoxyCodeLine{Console.WriteLine(doubleBoosted.Defense);\ \textcolor{comment}{//\ 20\ (10\ +\ 5\ +\ 5)}}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_mandatory2_d_game_framework_1_1_decorator_1_1_base_1_1_defence_item_decorator_a5d301123c9a8a8a63ec3bb2745733306}{Defence\+Item\+Decorator}, \doxylink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_weaken_defence_decorator}{Weaken\+Defence\+Decorator}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-constructors}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator_a277620af33b38e717f06ceecc3015302}\index{Mandatory2DGameFramework.Decorator.ConcreteDecorators.BoostDefenceDecorator@{Mandatory2DGameFramework.Decorator.ConcreteDecorators.BoostDefenceDecorator}!BoostDefenceDecorator@{BoostDefenceDecorator}}
+\index{BoostDefenceDecorator@{BoostDefenceDecorator}!Mandatory2DGameFramework.Decorator.ConcreteDecorators.BoostDefenceDecorator@{Mandatory2DGameFramework.Decorator.ConcreteDecorators.BoostDefenceDecorator}}
+\doxysubsubsection{\texorpdfstring{BoostDefenceDecorator()}{BoostDefenceDecorator()}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator_a277620af33b38e717f06ceecc3015302} 
+Mandatory2\+DGame\+Framework.\+Decorator.\+Concrete\+Decorators.\+Boost\+Defence\+Decorator.\+Boost\+Defence\+Decorator (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item}{IDefence\+Item}}}]{item}{}\end{DoxyParamCaption})}
+
+
+
+Initializes a new instance of the \doxylink{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator}{Boost\+Defence\+Decorator} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em item} & The defense item to boost.\\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-property-members}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator_doc-property-members}
+\doxysubsection{Property Documentation}
+\Hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator_a4c3da3fc3b48ded4c95928feb54a2fd1}\index{Mandatory2DGameFramework.Decorator.ConcreteDecorators.BoostDefenceDecorator@{Mandatory2DGameFramework.Decorator.ConcreteDecorators.BoostDefenceDecorator}!Defense@{Defense}}
+\index{Defense@{Defense}!Mandatory2DGameFramework.Decorator.ConcreteDecorators.BoostDefenceDecorator@{Mandatory2DGameFramework.Decorator.ConcreteDecorators.BoostDefenceDecorator}}
+\doxysubsubsection{\texorpdfstring{Defense}{Defense}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator_a4c3da3fc3b48ded4c95928feb54a2fd1} 
+override int Mandatory2\+DGame\+Framework.\+Decorator.\+Concrete\+Decorators.\+Boost\+Defence\+Decorator.\+Defense\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the boosted defense value. 
+
+The wrapped item\textquotesingle{}s defense plus Boost\+Amount (default is 5).
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item_a9a52f09c4c3a43d361d35c43123b627a}{Mandatory2\+DGame\+Framework.\+Decorator.\+Interfaces.\+IDefence\+Item}}.
+
+\Hypertarget{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator_aa22c1447d97b24234ab378b8b75c3d00}\index{Mandatory2DGameFramework.Decorator.ConcreteDecorators.BoostDefenceDecorator@{Mandatory2DGameFramework.Decorator.ConcreteDecorators.BoostDefenceDecorator}!Name@{Name}}
+\index{Name@{Name}!Mandatory2DGameFramework.Decorator.ConcreteDecorators.BoostDefenceDecorator@{Mandatory2DGameFramework.Decorator.ConcreteDecorators.BoostDefenceDecorator}}
+\doxysubsubsection{\texorpdfstring{Name}{Name}}
+{\footnotesize\ttfamily \label{class_mandatory2_d_game_framework_1_1_decorator_1_1_concrete_decorators_1_1_boost_defence_decorator_aa22c1447d97b24234ab378b8b75c3d00} 
+override string Mandatory2\+DGame\+Framework.\+Decorator.\+Concrete\+Decorators.\+Boost\+Defence\+Decorator.\+Name\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Gets the name with "{}(\+Boosted)"{} suffix to indicate the boost effect. 
+
+The wrapped item\textquotesingle{}s name with "{} (\+Boosted)"{} appended.
+
+Implements \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_decorator_1_1_interfaces_1_1_i_defence_item_aa5cc1b82509d924baffbe7717238bcdc}{Mandatory2\+DGame\+Framework.\+Decorator.\+Interfaces.\+IDefence\+Item}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Decorator/\+Concrete\+Decorators/Boost\+Defence\+Decorator.\+cs\end{DoxyCompactItemize}

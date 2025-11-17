@@ -1,0 +1,5 @@
+var namespace_mandatory2_d_game_framework_1_1_observer_1_1_implementations =
+[
+    [ "ApplicationLogger", "class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger.html", "class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_application_logger" ],
+    [ "CombatLogger", "class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger.html", "class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger" ]
+];

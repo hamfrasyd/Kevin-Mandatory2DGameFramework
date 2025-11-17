@@ -1,0 +1,4 @@
+var namespace_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces =
+[
+    [ "IAttackStrategy", "interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy.html", "interface_mandatory2_d_game_framework_1_1_strategy_1_1_interfaces_1_1_i_attack_strategy" ]
+];

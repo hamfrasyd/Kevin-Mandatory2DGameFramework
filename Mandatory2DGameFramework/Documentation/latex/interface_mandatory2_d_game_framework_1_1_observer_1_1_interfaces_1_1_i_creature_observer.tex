@@ -1,0 +1,135 @@
+\doxysection{Mandatory2\+DGame\+Framework.\+Observer.\+Interfaces.\+ICreature\+Observer Interface Reference}
+\hypertarget{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer}{}\label{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer}\index{Mandatory2DGameFramework.Observer.Interfaces.ICreatureObserver@{Mandatory2DGameFramework.Observer.Interfaces.ICreatureObserver}}
+
+
+Interface for receiving notifications about creature events. Enables loose coupling between creatures and event handlers.  
+
+
+Inheritance diagram for Mandatory2\+DGame\+Framework.\+Observer.\+Interfaces.\+ICreature\+Observer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer_aecb96860ad6b3c7c7259a8f5310320ed}{On\+Damage\+Done}} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}} attacker, string action, \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable}{IAttackable}} target, int damage)
+\begin{DoxyCompactList}\small\item\em Called when a creature performs an attack (damage done). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer_a24f418dead97eee7a49e709581066063}{On\+Creature\+Hit}} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}} creature, string action, int damage\+Taken, int damage\+Mitigated)
+\begin{DoxyCompactList}\small\item\em Called when a creature takes damage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer_a80411af792cc886c34310759db6ac521}{On\+Creature\+Died}} (\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}} creature)
+\begin{DoxyCompactList}\small\item\em Called when a creature\textquotesingle{}s hit points reach zero or below. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface for receiving notifications about creature events. Enables loose coupling between creatures and event handlers. 
+
+Observers are notified when creatures take damage or die. Multiple observers can be attached to a single creature, enabling features like\+: 
+\begin{DoxyItemize}
+\item Combat logging 
+\item Statistics tracking 
+\item UI updates 
+\item Achievement systems 
+\end{DoxyItemize}
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{comment}{//\ Create\ an\ observer\ (singleton,\ auto-\/starts\ combat\ logging)}}
+\DoxyCodeLine{ICreatureObserver\ logger\ =\ CombatLogger.Instance;}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Attach\ to\ creature}}
+\DoxyCodeLine{Creature\ warrior\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{namespace_mandatory2_d_game_framework_1_1_enums_ab0cf20a6d45a1f00a50d33a20511a9d1a7ee7fa010d64b90a36803a8445f2e943}{Warrior}}(\textcolor{stringliteral}{"{}Bob"{}},\ 1000);}
+\DoxyCodeLine{warrior.Attach(logger);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{comment}{//\ Events\ trigger\ notifications}}
+\DoxyCodeLine{warrior.TakeDamage(100);\ \textcolor{comment}{//\ Triggers\ OnCreatureHit}}
+\DoxyCodeLine{warrior.TakeDamage(1000);\ \textcolor{comment}{//\ Triggers\ OnCreatureDied}}
+
+\end{DoxyCode}
+ 
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}, \doxylink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger}{Combat\+Logger}
+
+
+\end{DoxySeeAlso}
+
+
+\label{doc-func-members}
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer_a80411af792cc886c34310759db6ac521}\index{Mandatory2DGameFramework.Observer.Interfaces.ICreatureObserver@{Mandatory2DGameFramework.Observer.Interfaces.ICreatureObserver}!OnCreatureDied@{OnCreatureDied}}
+\index{OnCreatureDied@{OnCreatureDied}!Mandatory2DGameFramework.Observer.Interfaces.ICreatureObserver@{Mandatory2DGameFramework.Observer.Interfaces.ICreatureObserver}}
+\doxysubsubsection{\texorpdfstring{OnCreatureDied()}{OnCreatureDied()}}
+{\footnotesize\ttfamily \label{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer_a80411af792cc886c34310759db6ac521} 
+void Mandatory2\+DGame\+Framework.\+Observer.\+Interfaces.\+ICreature\+Observer.\+On\+Creature\+Died (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}}}]{creature}{}\end{DoxyParamCaption})}
+
+
+
+Called when a creature\textquotesingle{}s hit points reach zero or below. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em creature} & The creature that died.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger_a99b8a3884bf21e315f2672db65bece7c}{Mandatory2\+DGame\+Framework.\+Observer.\+Implementations.\+Combat\+Logger}}.
+
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer_a24f418dead97eee7a49e709581066063}\index{Mandatory2DGameFramework.Observer.Interfaces.ICreatureObserver@{Mandatory2DGameFramework.Observer.Interfaces.ICreatureObserver}!OnCreatureHit@{OnCreatureHit}}
+\index{OnCreatureHit@{OnCreatureHit}!Mandatory2DGameFramework.Observer.Interfaces.ICreatureObserver@{Mandatory2DGameFramework.Observer.Interfaces.ICreatureObserver}}
+\doxysubsubsection{\texorpdfstring{OnCreatureHit()}{OnCreatureHit()}}
+{\footnotesize\ttfamily \label{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer_a24f418dead97eee7a49e709581066063} 
+void Mandatory2\+DGame\+Framework.\+Observer.\+Interfaces.\+ICreature\+Observer.\+On\+Creature\+Hit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}}}]{creature}{, }\item[{string}]{action}{, }\item[{int}]{damage\+Taken}{, }\item[{int}]{damage\+Mitigated}{}\end{DoxyParamCaption})}
+
+
+
+Called when a creature takes damage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em creature} & The creature that was hit.\\
+\hline
+{\em action} & The action that caused damage (e.\+g., "{}\+Attack"{}, "{}\+Defend"{}).\\
+\hline
+{\em damage\+Taken} & The amount of damage taken (after defense reduction).\\
+\hline
+{\em damage\+Mitigated} & The amount of damage mitigated by armor.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger_a399d5cca233fb531312beed992c6052d}{Mandatory2\+DGame\+Framework.\+Observer.\+Implementations.\+Combat\+Logger}}.
+
+\Hypertarget{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer_aecb96860ad6b3c7c7259a8f5310320ed}\index{Mandatory2DGameFramework.Observer.Interfaces.ICreatureObserver@{Mandatory2DGameFramework.Observer.Interfaces.ICreatureObserver}!OnDamageDone@{OnDamageDone}}
+\index{OnDamageDone@{OnDamageDone}!Mandatory2DGameFramework.Observer.Interfaces.ICreatureObserver@{Mandatory2DGameFramework.Observer.Interfaces.ICreatureObserver}}
+\doxysubsubsection{\texorpdfstring{OnDamageDone()}{OnDamageDone()}}
+{\footnotesize\ttfamily \label{interface_mandatory2_d_game_framework_1_1_observer_1_1_interfaces_1_1_i_creature_observer_aecb96860ad6b3c7c7259a8f5310320ed} 
+void Mandatory2\+DGame\+Framework.\+Observer.\+Interfaces.\+ICreature\+Observer.\+On\+Damage\+Done (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_template_1_1_base_1_1_creature}{Creature}}}]{attacker}{, }\item[{string}]{action}{, }\item[{\mbox{\hyperlink{interface_mandatory2_d_game_framework_1_1_interfaces_1_1_i_attackable}{IAttackable}}}]{target}{, }\item[{int}]{damage}{}\end{DoxyParamCaption})}
+
+
+
+Called when a creature performs an attack (damage done). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em attacker} & The creature performing the attack.\\
+\hline
+{\em action} & The action performed (e.\+g., "{}\+Attack"{}, "{}\+Defend"{}).\\
+\hline
+{\em target} & The target being attacked.\\
+\hline
+{\em damage} & The amount of damage dealt.\\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_mandatory2_d_game_framework_1_1_observer_1_1_implementations_1_1_combat_logger_add20915e62a25ba6c5a0b8b3132cc6aa}{Mandatory2\+DGame\+Framework.\+Observer.\+Implementations.\+Combat\+Logger}}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Observer/\+Interfaces/ICreature\+Observer.\+cs\end{DoxyCompactItemize}
