@@ -45,9 +45,10 @@ If you have the source code, add a project reference to your `.csproj` file:
 ```
 
 ### Option 2: NuGet Package
+#### [Nuget link](https://www.nuget.org/packages/KevinsMandatory2DGameFramework)
 
 ```bash
-dotnet add package Mandatory2DGameFramework
+dotnet add package  KevinsMandatory2DGameFramework 
 ```
 
 ## Quick Start
