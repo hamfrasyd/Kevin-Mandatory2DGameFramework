@@ -14,8 +14,8 @@
     <RepositoryUrl>https://github.com/hamfrasyd/Kevin-Mandatory2DGameFramework</RepositoryUrl>
     <PackageId>Kevins$(AssemblyName)</PackageId>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
-    <PackageIcon></PackageIcon>
-    <Version>1.2$(VersionPrefix)</Version>
+    <PackageIcon>GameIcon.png</PackageIcon>
+    <Version>1.2.1$(VersionPrefix)</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,11 +25,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Icons\GameIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\LICENSE.txt">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
     <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="Icons\GameIcon.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
