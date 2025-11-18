@@ -1,5 +1,3 @@
-using Mandatory2DGameFramework.Template.Base;
-
 namespace GameFrameworkConsoleApp.Services
 {
     /// <summary>

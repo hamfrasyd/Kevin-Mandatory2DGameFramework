@@ -1,10 +1,9 @@
-using Mandatory2DGameFramework.Core.World;
-using Mandatory2DGameFramework.Enums;
-using Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories;
-using Mandatory2DGameFramework.Factory.FactoryMethod;
-using Mandatory2DGameFramework.Template.Base;
-using Mandatory2DGameFramework.Factory.AbstractFactory;
-using Mandatory2DGameFramework.Composite.Interfaces;
+using Mandatory2DGameFramework.Domain.Enums;
+using Mandatory2DGameFramework.Domain.Creatures.Classes;
+using Mandatory2DGameFramework.Domain.Creatures.Factories;
+using Mandatory2DGameFramework.Domain.Equipment.Armor;
+using Mandatory2DGameFramework.Domain.Equipment.Factories;
+using Mandatory2DGameFramework.Domain.Environment;
 
 namespace GameFrameworkConsoleApp.Services
 {
@@ -51,9 +50,9 @@ namespace GameFrameworkConsoleApp.Services
         {
             return creature switch
             {
-                Mandatory2DGameFramework.Template.Implementations.Warrior => new WarriorItemFactory(),
-                Mandatory2DGameFramework.Template.Implementations.Mage => new MageItemFactory(),
-                Mandatory2DGameFramework.Template.Implementations.Hunter => new HunterItemFactory(),
+                Warrior => new WarriorItemFactory(),
+                Mage => new MageItemFactory(),
+                Hunter => new HunterItemFactory(),
                 _ => null
             };
         }

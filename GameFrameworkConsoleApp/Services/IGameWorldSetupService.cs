@@ -1,6 +1,5 @@
-using Mandatory2DGameFramework.Core.World;
-using Mandatory2DGameFramework.Enums;
-using Mandatory2DGameFramework.Template.Base;
+using Mandatory2DGameFramework.Domain.Enums;
+using Mandatory2DGameFramework.Domain.Environment;
 
 namespace GameFrameworkConsoleApp.Services
 {

@@ -8,7 +8,7 @@ namespace GameFrameworkConsoleApp.Services
     {
         void DisplayHeader(string title);
         void DisplaySeparator();
-        void DisplayCreatureInfo(Mandatory2DGameFramework.Template.Base.Creature creature);
+        void DisplayCreatureInfo(Creature creature);
         void DisplayCombatResult(string attacker, string target, int damage);
         void DisplayMessage(string message);
         void DisplayError(string error);

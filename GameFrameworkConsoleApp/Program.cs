@@ -1,5 +1,5 @@
 ﻿using GameFrameworkConsoleApp.Services;
-using Mandatory2DGameFramework.Loggers;
+using Mandatory2DGameFramework.Domain.Logging.Infrastructure;
 using System.Diagnostics;
 namespace GameFrameworkConsoleApp
 {

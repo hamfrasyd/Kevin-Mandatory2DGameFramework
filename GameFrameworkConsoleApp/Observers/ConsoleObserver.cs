@@ -1,6 +1,4 @@
-using Mandatory2DGameFramework.Interfaces;
-using Mandatory2DGameFramework.Observer.Interfaces;
-using Mandatory2DGameFramework.Template.Base;
+using Mandatory2DGameFramework.Domain.Logging.Interfaces;
 
 namespace GameFrameworkConsoleApp.Observers
 {

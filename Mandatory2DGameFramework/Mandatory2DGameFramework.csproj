@@ -10,7 +10,6 @@
     <Authors>$(AssemblyName)</Authors>
     <Company>$(Authors)</Company>
     <PackageProjectUrl>http://primpio.com/Mandatory2DGameFramework/Documentation/html/index.html</PackageProjectUrl>
-    <PackageIcon>fantasy-flight-games-icon-1.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/hamfrasyd/Kevin-Mandatory2DGameFramework</RepositoryUrl>
     <PackageId>Kevins$(AssemblyName)</PackageId>
@@ -18,10 +17,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="..\..\..\..\..\Downloads\fantasy-flight-games-icon-1.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
     <None Include="..\LICENSE.txt">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
