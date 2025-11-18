@@ -15,7 +15,14 @@
     <PackageId>Kevins$(AssemblyName)</PackageId>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageIcon>GameIcon.png</PackageIcon>
+    <Version>1.2$(VersionPrefix)</Version>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Icons\**" />
+    <EmbeddedResource Remove="Icons\**" />
+    <None Remove="Icons\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\LICENSE.txt">
@@ -30,13 +37,6 @@
 
   <ItemGroup>
     <PackageReference Include="System.Diagnostics.EventLog" Version="10.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Icons\GameIcon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
   </ItemGroup>
 
 </Project>
