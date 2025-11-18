@@ -56,7 +56,7 @@ dotnet add package  KevinsMandatory2DGameFramework
 ### 1. Create a World
 
 ```csharp
-using Mandatory2DGameFramework.Core.World;
+using Mandatory2DGameFramework.Domain.Environment;
 
 World world = new World(maxX: 100, maxY: 100, name: "My Game World");
 ```
@@ -64,8 +64,8 @@ World world = new World(maxX: 100, maxY: 100, name: "My Game World");
 ### 2. Create Creatures
 
 ```csharp
-using Mandatory2DGameFramework.Factory.FactoryMethod;
-using Mandatory2DGameFramework.Enums;
+using Mandatory2DGameFramework.Domain.Creatures.Factories;
+using Mandatory2DGameFramework.Domain.Enums;
 
 // Use the factory to create creatures
 Creature warrior = CreatureFactory.CreateCreature(ClassType.Warrior, "Thorin");
@@ -81,9 +81,10 @@ world.AddCreature(hunter);
 ### 3. Equip Items
 
 ```csharp
-using Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories;
-using Mandatory2DGameFramework.Core.Items;
-using Mandatory2DGameFramework.Enums;
+using Mandatory2DGameFramework.Domain.Equipment.Factories;
+using Mandatory2DGameFramework.Domain.Equipment.Armor;
+using Mandatory2DGameFramework.Domain.Equipment.Weapons;
+using Mandatory2DGameFramework.Domain.Enums;
 
 // Create items using Abstract Factory
 IItemFactory warriorFactory = new WarriorItemFactory();
@@ -98,8 +99,8 @@ warrior.EquippedArmor.Add(helmet);
 ### 4. Set Up Logging
 
 ```csharp
-using Mandatory2DGameFramework.Observer.Implementations;
-using Mandatory2DGameFramework.Loggers;
+using Mandatory2DGameFramework.Domain.Logging.Observers;
+using Mandatory2DGameFramework.Domain.Logging.Infrastructure;
 using System.Diagnostics;
 
 // Initialize logger
@@ -172,12 +173,12 @@ Both use the **Observer Pattern** to automatically log creature events.
 ### Complete Example: Battle Simulation
 
 ```csharp
-using Mandatory2DGameFramework.Core.World;
-using Mandatory2DGameFramework.Factory.FactoryMethod;
-using Mandatory2DGameFramework.Factory.AbstractFactory.ConcreteFactories;
-using Mandatory2DGameFramework.Enums;
-using Mandatory2DGameFramework.Observer.Implementations;
-using Mandatory2DGameFramework.Loggers;
+using Mandatory2DGameFramework.Domain.Environment;
+using Mandatory2DGameFramework.Domain.Creatures.Factories;
+using Mandatory2DGameFramework.Domain.Equipment.Factories;
+using Mandatory2DGameFramework.Domain.Enums;
+using Mandatory2DGameFramework.Domain.Logging.Observers;
+using Mandatory2DGameFramework.Domain.Logging.Infrastructure;
 using System.Diagnostics;
 
 // Initialize logging
@@ -221,8 +222,8 @@ Console.WriteLine(mage.ToString());
 ### Custom Creature Class
 
 ```csharp
-using Mandatory2DGameFramework.Template.Base;
-using Mandatory2DGameFramework.Strategy.Implementations;
+using Mandatory2DGameFramework.Domain.Creatures.Base;
+using Mandatory2DGameFramework.Domain.Combat.Strategies;
 
 public class Paladin : Creature
 {
@@ -247,10 +248,9 @@ public class Paladin : Creature
 ### Using Decorators for Armor Modifications
 
 ```csharp
-using Mandatory2DGameFramework.Decorator.Base;
-using Mandatory2DGameFramework.Decorator.ConcreteDecorators;
-using Mandatory2DGameFramework.Core.Items;
-using Mandatory2DGameFramework.Enums;
+using Mandatory2DGameFramework.Domain.Equipment.Decorators;
+using Mandatory2DGameFramework.Domain.Equipment.Armor;
+using Mandatory2DGameFramework.Domain.Enums;
 
 // Create base armor
 DefenceItem baseHelmet = new DefenceItem("Basic Helmet", ArmorSlot.Head, ArmorType.Plate, 10);
@@ -277,18 +277,39 @@ This framework demonstrates several design patterns:
 
 ## Project Structure
 
+The project is organized using a **domain-driven structure** that groups related functionality together:
+
 ```
 Mandatory2DGameFramework/
-├── Core/              # Core game entities (World, WorldObject, Items)
-├── Template/          # Template Method pattern (Creature base class)
-├── Factory/           # Factory patterns (CreatureFactory, ItemFactories)
-├── Strategy/          # Attack strategies (Melee, Ranged)
-├── Observer/          # Observer pattern (Loggers)
-├── Decorator/         # Armor stat decorators
-├── Composite/         # Armor set management
-├── Enums/             # Game enumerations (ClassType, WeaponType, etc.)
-├── Loggers/           # Logging infrastructure
-└── Configraitons/     # Configuration system
+├── Domain/                    # Domain-driven organization
+│   ├── Creatures/            # Creature system
+│   │   ├── Base/             # Creature base class
+│   │   ├── Classes/          # Warrior, Mage, Hunter implementations
+│   │   ├── Factories/        # CreatureFactory
+│   │   └── Interfaces/       # IAttackable
+│   ├── Combat/               # Combat system
+│   │   ├── Strategies/       # MeleeAttackStrategy, RangedAttackStrategy
+│   │   └── Interfaces/       # IAttackStrategy
+│   ├── Equipment/            # Equipment system
+│   │   ├── Weapons/          # AttackItem, IWeapon
+│   │   ├── Armor/            # DefenceItem, EquippedArmorSet, interfaces
+│   │   ├── Decorators/       # Armor stat modifiers
+│   │   └── Factories/        # Item factories (Warrior, Mage, Hunter)
+│   ├── Environment/          # World management
+│   │   ├── World.cs          # World class
+│   │   └── WorldObject.cs    # Base world object
+│   ├── Logging/              # Logging system
+│   │   ├── Infrastructure/   # MyLogger
+│   │   ├── Observers/         # ApplicationLogger, CombatLogger
+│   │   └── Interfaces/       # ICreatureObserver
+│   └── Enums/                # Game enumerations
+│       ├── ClassType.cs
+│       ├── WeaponType.cs
+│       ├── ArmorType.cs
+│       └── ArmorSlot.cs
+└── Configuration/            # Configuration system
+    ├── ConfigReaders/         # ConfigReader, GameConfig
+    └── XMLConfigurations/     # GameConfiguration.xml
 ```
 
 ## Contributing
