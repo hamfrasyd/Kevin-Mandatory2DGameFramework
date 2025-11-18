@@ -14,6 +14,7 @@
     <RepositoryUrl>https://github.com/hamfrasyd/Kevin-Mandatory2DGameFramework</RepositoryUrl>
     <PackageId>Kevins$(AssemblyName)</PackageId>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageIcon>GameIcon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -29,6 +30,13 @@
 
   <ItemGroup>
     <PackageReference Include="System.Diagnostics.EventLog" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Icons\GameIcon.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
